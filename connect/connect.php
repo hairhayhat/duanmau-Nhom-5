@@ -1,6 +1,7 @@
 <?php
 
-class Connect {
+class Connect
+{
     public function connect(): ?PDO
     {
         $serverName = 'localhost';
@@ -16,4 +17,10 @@ class Connect {
             return null;
         }
     }
+}
+
+function view($view, $data = [])
+{
+    extract($data);
+    include_once "views/$view.php";
 }
