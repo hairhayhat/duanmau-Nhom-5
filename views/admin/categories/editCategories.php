@@ -17,7 +17,8 @@
                                 <div class="card-header-2">
                                     <h5>Thêm Danh mục</h5>
                                 </div>
-                                <form action="index.php?act=edit-categories ?>"
+                                <form
+                                    action="index.php?act=edit-categories&category_id=<?= $getCategory['category_id'] ?>"
                                     class="theme-form theme-form-2 mega-form" enctype="multipart/form-data"
                                     method="post">
                                     <div class="row">
@@ -26,8 +27,7 @@
                                             <label class="form-label-title col-sm-2 mb-0">Tên</label>
                                             <div class="col-sm-10">
                                                 <input id="name" name="name" class="form-control" type="text"
-                                                    value="<?=$$getCategory['name']?>" placeholder="Nhập tên danh mục"
-                                                    required>
+                                                    value="<?= $getCategory['name'] ?>" placeholder="Nhập tên danh mục">
                                                 <?php if (isset($_SESSION['errors']['name'])): ?>
                                                     <p class="text-danger"><?= $_SESSION['errors']['name'] ?></p>
                                                 <?php endif ?>
@@ -38,11 +38,12 @@
                                         <div class="mb-4 row align-items-center">
                                             <label class="form-label-title col-sm-2 mb-0">Ảnh</label>
                                             <div class="col-sm-10">
-                                                <input id="image" class="form-control" type="file" name="image"
-                                                    required>
-                                                <?php if (isset($_SESSION['errors']['image'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
-                                                <?php endif ?>
+                                                <img src="./images/category/<?= $getCategory['image'] ?>" alt=""
+                                                    class=" mb-2 img-fluid rounded shadow" style="max-width: 200px;">
+                                                <input type="hidden" name="old_image"
+                                                    value="<?= isset($getCategory['image']) ? $getCategory['image'] : '' ?>">
+
+                                                <input id="image" class="form-control" type="file" name="image">
                                             </div>
                                         </div>
 
@@ -50,9 +51,13 @@
                                         <div class="mb-4 row align-items-center">
                                             <label class="form-label-title col-sm-2 mb-0">Trạng thái</label>
                                             <div class="col-sm-10">
-                                                <select class="form-select" name="status" required>
-                                                    <option value="Hidden">Ẩn</option>
-                                                    <option value="Active">Hiện</option>
+                                                <select class="form-select" name="status">
+                                                    <option value="Hidden" <?= (isset($getCategory['status']) && $getCategory['status'] === 'Hidden') ? 'selected' : '' ?>>
+                                                        Ẩn
+                                                    </option>
+                                                    <option value="Active" <?= (isset($getCategory['status']) && $getCategory['status'] === 'Active') ? 'selected' : '' ?>>
+                                                        Hiện
+                                                    </option>
                                                 </select>
                                                 <?php if (isset($_SESSION['errors']['status'])): ?>
                                                     <p class="text-danger"><?= $_SESSION['errors']['status'] ?></p>
@@ -60,12 +65,14 @@
                                             </div>
                                         </div>
 
+
                                         <!-- Category Description -->
                                         <div class="mb-4 row align-items-center">
                                             <label class="form-label-title col-sm-2 mb-0">Miêu tả</label>
                                             <div class="col-sm-10">
                                                 <textarea id="description" name="description" class="form-control"
-                                                    rows="5" placeholder="Nhập miêu tả danh mục" required></textarea>
+                                                    rows="5"
+                                                    placeholder="Nhập miêu tả danh mục"><?= $getCategory['description'] ?></textarea>
                                                 <?php if (isset($_SESSION['errors']['description'])): ?>
                                                     <p class="text-danger"><?= $_SESSION['errors']['description'] ?></p>
                                                 <?php endif ?>
@@ -75,7 +82,7 @@
                                         <!-- Submit Button -->
                                         <div class="row justify-content-end">
                                             <div class="col-sm-10">
-                                                <button type="submit" name="editCategory"
+                                                <button type="submit" name="saveEditCategory"
                                                     class="btn btn-primary">Apply</button>
                                             </div>
                                         </div>

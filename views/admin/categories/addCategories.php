@@ -25,7 +25,7 @@
                                             <label class="form-label-title col-sm-2 mb-0">Tên</label>
                                             <div class="col-sm-10">
                                                 <input id="name" name="name" class="form-control" type="text"
-                                                    placeholder="Nhập tên danh mục" required>
+                                                    placeholder="Nhập tên danh mục">
                                                 <?php if (isset($_SESSION['errors']['name'])): ?>
                                                     <p class="text-danger"><?= $_SESSION['errors']['name'] ?></p>
                                                 <?php endif ?>
@@ -36,8 +36,7 @@
                                         <div class="mb-4 row align-items-center">
                                             <label class="form-label-title col-sm-2 mb-0">Ảnh</label>
                                             <div class="col-sm-10">
-                                                <input id="image" class="form-control" type="file" name="image"
-                                                    required>
+                                                <input id="image" class="form-control" type="file" name="image">
                                                 <?php if (isset($_SESSION['errors']['image'])): ?>
                                                     <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
                                                 <?php endif ?>
@@ -48,7 +47,7 @@
                                         <div class="mb-4 row align-items-center">
                                             <label class="form-label-title col-sm-2 mb-0">Trạng thái</label>
                                             <div class="col-sm-10">
-                                                <select class="form-select" name="status" required>
+                                                <select class="form-select" name="status">
                                                     <option value="Hidden">Ẩn</option>
                                                     <option value="Active">Hiện</option>
                                                 </select>
@@ -63,7 +62,7 @@
                                             <label class="form-label-title col-sm-2 mb-0">Miêu tả</label>
                                             <div class="col-sm-10">
                                                 <textarea id="description" name="description" class="form-control"
-                                                    rows="5" placeholder="Nhập miêu tả danh mục" required></textarea>
+                                                    rows="5" placeholder="Nhập miêu tả danh mục"></textarea>
                                                 <?php if (isset($_SESSION['errors']['description'])): ?>
                                                     <p class="text-danger"><?= $_SESSION['errors']['description'] ?></p>
                                                 <?php endif ?>
