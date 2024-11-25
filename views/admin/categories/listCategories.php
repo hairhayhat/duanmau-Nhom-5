@@ -2,7 +2,7 @@
 <?php include '../views/admin/layout/sidebar.php' ?>
 <div class="page-body">
     <div class="title-header">
-        <h5>Products List</h5>
+        <h5>Danh Mục</h5>
     </div>
 
     <div class="container-fluid">
@@ -15,10 +15,10 @@
                                 <table class="table table-1d all-package">
                                     <thead>
                                         <tr>
-                                            <th>Category image</th>
-                                            <th>Category name</th>
-                                            <th>Category status</th>
-                                            <th>Action</th>
+                                            <th>Hình ảnh</th>
+                                            <th>Tên</th>
+                                            <th>Trạng thái</th>
+                                            <th>Thao tác</th>
                                         </tr>
                                     </thead>
 
@@ -26,15 +26,20 @@
                                         <?php foreach ($list_Categories as $category): ?>
                                             <tr>
                                                 <td>
-                                                    <img src="admin/assets/images/profile/4.jpg" class="img-fluid" alt="">
+                                                    <img src="./images/category/<?= $category['image'] ?>" class="img-fluid"
+                                                        alt="<?= $category['name'] ?>">
                                                 </td>
 
                                                 <td>
-                                                    <a href="javascript:void(0)">Outwear & Coats</a>
+                                                    <a href=""></a>
+                                                    <?= $category['name'] ?>
                                                 </td>
 
                                                 <td>
-                                                    <a href="javascript:void(0)">Fashion</a>
+                                                    <span
+                                                        class="badge <?= $category['status'] === 'Active' ? 'bg-primary' : 'bg-secondary' ?>">
+                                                        <?= $category['status'] === 'Active' ? 'Active' : 'Inactive' ?>
+                                                    </span>
                                                 </td>
 
                                                 <td>
@@ -46,14 +51,9 @@
                                                         </li>
 
                                                         <li>
-                                                            <a href="javascript:void(0)">
+                                                            <a
+                                                                href="index.php?act=edit-categories&category_id=<?= $category['category_id'] ?>">
                                                                 <span class="lnr lnr-pencil"></span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a href="javascript:void(0)">
-                                                                <i class="far fa-trash-alt theme-color"></i>
                                                             </a>
                                                         </li>
                                                     </ul>
