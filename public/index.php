@@ -1,11 +1,14 @@
 <?php
+session_start();
 require_once '../connect/connect.php';
 require_once '../controllers/admin/CategoriesAdminControllers.php';
-require_once '../models/admin/CategoriesAdminModels.php';
 
 
 
-$action = isset($_GET['act']) ? $_GET['act'] : 'client';
+
+$action = isset($_GET['act']) ? $_GET['act'] : 'admin';
+
+$categoryAdmin = new CategoryAdminController();
 
 switch ($action) {
     case 'admin':
@@ -23,9 +26,12 @@ switch ($action) {
         break;
 
     case 'list-categories':
-        (new CategoryAdminController)->listCategories();
+        $categoryAdmin->listCategories();
         break;
     case 'add-categories':
-        include '../views/admin/categories/add-categories.php';
+        $categoryAdmin->saveAddCategory();
+        break;
+    case 'edit-categories':
+        $categoryAdmin->saveEditCategory();
         break;
 }
