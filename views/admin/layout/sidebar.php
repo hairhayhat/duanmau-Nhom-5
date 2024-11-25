@@ -4,8 +4,9 @@
                 <div>
                     <div class="logo-wrapper logo-wrapper-center">
                         <a href="index.php?act=admin" data-bs-original-title="" title="">
-                            <img class="img-fluid for-dark" src="admin/assets/images/logo/logo-white.png" alt="">
-                        </a>
+                        <h2 class="for-dark blur-up lazyload"><strong>Shop đồ điện</strong></h2>
+                        <h5 class="gradient-title">gia dụng</h5>
+                        </>
                         <div class="back-btn">
                             <i class="fa fa-angle-left"></i>
                         </div>
