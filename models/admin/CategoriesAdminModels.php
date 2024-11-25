@@ -1,24 +1,34 @@
 <?php
 require_once '../connect/connect.php';
 
-class CategoryAdminModel
+class CategoryAdminModel extends Connect
 {
-    private $conn;
-
-    public function __construct()
-    {
-        $db = new Connect();
-        $this->conn = $db->connect();
-    }
     public function listCategoriesAdmin()
     {
-        try {
-            $stmt = $this->conn->prepare("SELECT * FROM category");
-            $stmt->execute();
-            return $stmt->fetchALL(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            echo "Lỗi khi lấy dữ liệu category" . $e->getMessage();
-            return [];
-        }
+        $sql = 'SELECT * FROM category';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    public function addCategory($name, $image, $status, $description)
+    {
+        $sql = "INSERT INTO category(name, image, status, description) VALUES (?,?,?,?)";
+        $stmt = $this->connect()->prepare($sql);
+        return $stmt->execute([$name, $image, $status, $description]);
+    }
+
+    public function editCategory($id, $name, $image, $status, $description)
+    {
+        $sql = 'UPDATE category SET name=?, image=?, status=?, description=? WHERE category_id=?';
+        $stmt = $this->connect()->prepare($sql);
+        return $stmt->execute([$name, $image, $status, $description, $_GET['id']]);
+    }
+
+    public function getCategoryById($id)
+    {
+        $sql = 'SELECT * FROM category WHERE category_id=?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$_GET['id']]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
