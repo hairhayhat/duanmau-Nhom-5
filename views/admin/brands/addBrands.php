@@ -2,7 +2,7 @@
 <?php include '../views/admin/layout/sidebar.php' ?>
 <div class="page-body">
     <div class="title-header">
-        <h5>Thêm mới Danh mục</h5>
+        <h5>Thêm mới Thương hiệu</h5>
     </div>
 
     <!-- New Category Add Start -->
@@ -15,12 +15,12 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-header-2">
-                                    <h5>Thêm Danh mục</h5>
+                                    <h5>Thông tin Thương hiệu</h5>
                                 </div>
-                                <form action="index.php?act=add-categories" class="theme-form theme-form-2 mega-form"
+                                <form action="index.php?act=add-brands" class="theme-form theme-form-2 mega-form"
                                     enctype="multipart/form-data" method="post">
                                     <div class="row">
-                                        <!-- Category Name -->
+                                        <!-- tên thương hiệu -->
                                         <div class="mb-4 row align-items-center">
                                             <label class="form-label-title col-sm-2 mb-0">Tên</label>
                                             <div class="col-sm-10">
@@ -32,32 +32,18 @@
                                             </div>
                                         </div>
 
-                                        <!-- Category Images -->
+                                        <!-- logo -->
                                         <div class="mb-4 row align-items-center">
-                                            <label class="form-label-title col-sm-2 mb-0">Ảnh</label>
+                                            <label class="form-label-title col-sm-2 mb-0">Logo</label>
                                             <div class="col-sm-10">
-                                                <input id="image" class="form-control" type="file" name="image">
-                                                <?php if (isset($_SESSION['errors']['image'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['image'] ?></p>
+                                                <input id="logo" class="form-control" type="file" name="logo">
+                                                <?php if (isset($_SESSION['errors']['logo'])): ?>
+                                                    <p class="text-danger"><?= $_SESSION['errors']['logo'] ?></p>
                                                 <?php endif ?>
                                             </div>
                                         </div>
 
-                                        <!-- Cateogry Status -->
-                                        <div class="mb-4 row align-items-center">
-                                            <label class="form-label-title col-sm-2 mb-0">Trạng thái</label>
-                                            <div class="col-sm-10">
-                                                <select class="form-select" name="status">
-                                                    <option value="Hidden">Ẩn</option>
-                                                    <option value="Active">Hiện</option>
-                                                </select>
-                                                <?php if (isset($_SESSION['errors']['status'])): ?>
-                                                    <p class="text-danger"><?= $_SESSION['errors']['status'] ?></p>
-                                                <?php endif ?>
-                                            </div>
-                                        </div>
-
-                                        <!-- Category Description -->
+                                        <!-- Miêu tả -->
                                         <div class="mb-4 row align-items-center">
                                             <label class="form-label-title col-sm-2 mb-0">Miêu tả</label>
                                             <div class="col-sm-10">
@@ -72,7 +58,7 @@
                                         <!-- Submit Button -->
                                         <div class="row justify-content-start">
                                             <div class="col-sm-10">
-                                                <button type="submit" name="addCategory"
+                                                <button type="submit" name="addBrand"
                                                     class="btn btn-primary">Apply</button>
                                             </div>
                                         </div>

@@ -13,14 +13,14 @@ class CategoryAdminModel extends Connect
 
     public function addCategory($name, $image, $status, $description)
     {
-        $sql = "INSERT INTO category(name, image, status, description) VALUES (?,?,?,?)";
+        $sql = "INSERT INTO category(name, image, status, description,created_at) VALUES (?,?,?,?,CURRENT_TIMESTAMP)";
         $stmt = $this->connect()->prepare($sql);
         return $stmt->execute([$name, $image, $status, $description]);
     }
 
     public function updateCategory($id, $name, $image, $status, $description)
     {
-        $sql = 'UPDATE category SET name=?, image=?, status=?, description=? WHERE category_id=?';
+        $sql = 'UPDATE category SET name=?, image=?, status=?, description=?, update_at=CURRENT_TIMESTAMP WHERE category_id=?';
         $stmt = $this->connect()->prepare($sql);
         return $stmt->execute([$name, $image, $status, $description, $id]);
     }

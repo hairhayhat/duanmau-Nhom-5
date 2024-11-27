@@ -1,5 +1,5 @@
 <?php
-require_once '../models/admin/CategoriesAdminModels.php';
+require_once '../models/admin/CategoriesModels.php';
 class CategoryAdminController extends CategoryAdminModel
 {
     public function listCategories()
@@ -45,7 +45,7 @@ class CategoryAdminController extends CategoryAdminModel
         include '../views/admin/categories/addCategories.php';
     }
 
-    public function editCategoryById()
+    public function getACategoryById()
     {
         $id = $_GET['category_id'];
         $getCategory = $this->getCategoryById($id);

@@ -1,5 +1,5 @@
 <?php
-require_once '../models/admin/ProductsAdminModels.php';
+require_once '../models/admin/ProductsModels.php';
 
 class ProductsAdminController extends ProductsAdminModle
 {

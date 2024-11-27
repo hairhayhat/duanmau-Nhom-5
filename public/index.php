@@ -1,8 +1,9 @@
 <?php
 session_start();
 require_once '../connect/connect.php';
-require_once '../controllers/admin/CategoriesAdminControllers.php';
-require_once '../controllers/admin/ProductsAdminControllers.php';
+require_once '../controllers/admin/CategoriesControllers.php';
+require_once '../controllers/admin/ProductsControllers.php';
+require_once '../controllers/admin/BrandsControllers.php';
 
 
 
@@ -12,6 +13,7 @@ $action = isset($_GET['act']) ? $_GET['act'] : 'admin';
 
 $categoryAdmin = new CategoryAdminController();
 $productAdmin = new ProductsAdminController();
+$brandAdmin = new BrandsControllers();
 
 switch ($action) {
     case 'admin':
@@ -20,14 +22,14 @@ switch ($action) {
     case 'client':
         include '../views/client/index.php';
         break;
-//danh sách và thêm sp
+    //danh sách và thêm sp
     case 'list-products':
         $productAdmin->listProduct();
         break;
     case 'add-products':
         include '../views/admin/products/addProducts.php';
         break;
-//Danh mục của admin
+    //Danh mục của admin
     case 'list-categories':
         $categoryAdmin->listCategories();
         break;
@@ -37,7 +39,22 @@ switch ($action) {
     case 'edit-categories':
         $categoryAdmin->saveEditCategory();
         break;
-// sản phẩm của client
+
+    // thương hiệu
+    case 'list-brands':
+        $brandAdmin->listBrands();
+        break;
+    case 'add-brands':
+        $brandAdmin->saveAddBrand();
+        break;
+    case 'edit-brands':
+        $brandAdmin->saveEditBrand();
+        break;
+
+
+
+
+    // sản phẩm của client
     case 'list-products-client':
         include '../views/client/products/listProducts.php';
         break;
