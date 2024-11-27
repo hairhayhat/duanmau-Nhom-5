@@ -2,6 +2,8 @@
 session_start();
 require_once '../connect/connect.php';
 require_once '../controllers/admin/CategoriesAdminControllers.php';
+require_once '../controllers/admin/ProductsAdminControllers.php';
+
 
 
 
@@ -9,6 +11,7 @@ require_once '../controllers/admin/CategoriesAdminControllers.php';
 $action = isset($_GET['act']) ? $_GET['act'] : 'admin';
 
 $categoryAdmin = new CategoryAdminController();
+$productAdmin = new ProductsAdminController();
 
 switch ($action) {
     case 'admin':
@@ -18,11 +21,11 @@ switch ($action) {
         include '../views/client/index.php';
         break;
 
-    case 'products':
-        include '../views/admin/products/products.php';
+    case 'list-products':
+        $productAdmin->listProduct();
         break;
     case 'add-products':
-        include '../views/admin/products/add-products.php';
+        include '../views/admin/products/addProducts.php';
         break;
 
     case 'list-categories':
