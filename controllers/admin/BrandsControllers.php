@@ -31,7 +31,7 @@ class BrandsControllers extends BrandsModels
                 $addCategory = $this->addBrand($_POST['name'], $logo, $_POST['description']);
                 if ($addCategory) {
                     $_SESSION['success'] = 'Thêm thương hiệu thành công';
-                    header('Location: index.php?act=list-brands');
+                    header('Location: index.php?act=add-brands');
                     exit;
                 } else {
                     $_SESSION['errors'] = 'Thêm thương hiệu thất bại';
