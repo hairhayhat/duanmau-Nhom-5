@@ -41,6 +41,10 @@
                                                     <p class="text-danger"><?= $_SESSION['errors']['logo'] ?></p>
                                                 <?php endif ?>
                                             </div>
+                                            <div class="mb-3 row align-items-start">
+                                                <img id="preview-image" src="#" alt="Preview"
+                                                    style="max-width: 200px; display: none;">
+                                            </div>
                                         </div>
 
                                         <!-- Miêu tả -->
@@ -88,5 +92,14 @@
     <!-- footer En -->
 </div>
 <!-- Container-fluid End -->
-
+<script>
+    document.getElementById('logo').addEventListener('change', function (e) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById('preview-image').src = e.target.result;
+            document.getElementById('preview-image').style.display = 'block';
+        };
+        reader.readAsDataURL(this.files[0]);
+    });
+</script>
 <?php include '../views/admin/layout/footer.php' ?>
