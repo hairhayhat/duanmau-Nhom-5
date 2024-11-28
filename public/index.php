@@ -4,6 +4,7 @@ require_once '../connect/connect.php';
 require_once '../controllers/admin/CategoriesControllers.php';
 require_once '../controllers/admin/ProductsControllers.php';
 require_once '../controllers/admin/BrandsControllers.php';
+require_once '../controllers/client/AuthController.php';
 
 
 
@@ -14,6 +15,7 @@ $action = isset($_GET['act']) ? $_GET['act'] : 'admin';
 $categoryAdmin = new CategoryAdminController();
 $productAdmin = new ProductsAdminController();
 $brandAdmin = new BrandsControllers();
+$auth = new AuthController();
 
 switch ($action) {
     case 'admin':
@@ -57,5 +59,11 @@ switch ($action) {
     // sản phẩm của client
     case 'list-products-client':
         include '../views/client/products/listProducts.php';
+        break;
+    case 'login':
+        $auth->signin();
+        break;
+    case 'register':
+        $auth->registers();
         break;
 }

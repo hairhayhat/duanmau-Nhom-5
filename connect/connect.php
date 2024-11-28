@@ -7,7 +7,7 @@ class Connect
         $serverName = 'localhost';
         $userName = 'root';
         $passWord = '';
-        $myDB = 'du an mau 1';
+        $myDB = 'du_an_1';
         try {
             $conn = new PDO("mysql:host=$serverName;dbname=$myDB;charset=utf8", $userName, $passWord);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
