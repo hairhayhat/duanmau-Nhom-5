@@ -132,15 +132,15 @@
                         <li class="sidebar-list">
                             <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                 <i data-feather="box"></i>
-                                <span>Product</span>
+                                <span>Sản Phẩm</span>
                             </a>
                             <ul class="sidebar-submenu">
                                 <li>
-                                    <a href="index.php?act=list-products">Prodcts</a>
+                                    <a href="index.php?act=list-products">Danh sách sản phẩm</a>
                                 </li>
 
                                 <li>
-                                    <a href="index.php?act=add-products">Add New Products</a>
+                                    <a href="index.php?act=add-products">Thêm sản phẩm</a>
                                 </li>
                             </ul>
                         </li>
