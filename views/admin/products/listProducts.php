@@ -19,52 +19,61 @@
                                             <th>Hình ảnh</th>
                                             <th>Tên</th>
                                             <th>Danh mục</th>
+                                            <th>Thương hiệu</th>
                                             <th>Giá</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        <?php foreach ($list_Products as $product) :?>
-                                        <tr>
-                                            <td>
-                                                <a href="javascript:void(0)"><?=$product['product_id']?></a>
-                                            </td>
+                                        <?php foreach ($list_Products as $product): ?>
+                                            <tr>
+                                                <td>
+                                                    <a href="javascript:void(0)"><?= $product['product_id'] ?></a>
+                                                </td>
 
-                                            <td>
-                                                <img src="<?=$product['image']?>" class="img-fluid" alt="" style="width: 100px">
-                                            </td>
+                                                <td>
+                                                    <img src="./images/product/<?= $product['image'] ?>" class="img-fluid"
+                                                        alt="" style="width: 100px">
+                                                </td>
 
-                                            <td>
-                                                <a href="javascript:void(0)"><?=$product['name']?></a>
-                                            </td>
+                                                <td>
+                                                    <a href="javascript:void(0)"><?= $product['name'] ?></a>
+                                                </td>
 
-                                            <td>2</td>
+                                                <td>
+                                                    <a href="javascript:void(0)"><?= $product['category_id'] ?></a>
+                                                </td>
 
-                                            <td class="td-price"><?=$product['price']?></td>
+                                                <td>
+                                                    <a href="javascript:void(0)"><?= $product['brand_id'] ?></a>
+                                                </td>
 
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <span class="lnr lnr-eye"></span>
-                                                        </a>
-                                                    </li>
 
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <span class="lnr lnr-pencil"></span>
-                                                        </a>
-                                                    </li>
+                                                <td class="td-price"><?= $product['price'] ?></td>
 
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="far fa-trash-alt theme-color"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
+                                                <td>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="order-detail.html">
+                                                                <span class="lnr lnr-eye"></span>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="javascript:void(0)">
+                                                                <span class="lnr lnr-pencil"></span>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="javascript:void(0)">
+                                                                <i class="far fa-trash-alt theme-color"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
                                         <?php endforeach ?>
                                     </tbody>
                                 </table>

@@ -24,12 +24,15 @@ switch ($action) {
     case 'client':
         include '../views/client/index.php';
         break;
-    //danh sách và thêm sp
+    //Sản phẩm của admin
     case 'list-products':
         $productAdmin->listProduct();
         break;
     case 'add-products':
-        include '../views/admin/products/addProducts.php';
+        $productAdmin->addProducts();
+        break;
+    case 'save-add-products':
+        $productAdmin->saveAddProducts();
         break;
     //Danh mục của admin
     case 'list-categories':
