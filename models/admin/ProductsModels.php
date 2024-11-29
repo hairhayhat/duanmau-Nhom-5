@@ -5,7 +5,10 @@ class ProductsAdminModle extends Connect
 {
     public function listProductAdmin()
     {
-        $sql = 'SELECT * FROM products';
+        $sql = "SELECT products.*, category.name AS category_name, brands.name AS brand_name
+                FROM products
+                INNER JOIN category ON products.category_id = category.category_id
+                INNER JOIN brands ON products.brand_id = brands.brand_id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -18,6 +21,7 @@ class ProductsAdminModle extends Connect
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
 
     public function getAllBrands()
     {

@@ -6,6 +6,8 @@ class ProductsAdminController extends ProductsAdminModle
     public function listProduct()
     {
         $list_Products = (new ProductsAdminModle)->listProductAdmin();
+        $categories = (new ProductsAdminModle)->getAllCategories();
+        $brands = (new ProductsAdminModle)->getAllBrands();
         include '../views/admin/products/listProducts.php';
     }
 

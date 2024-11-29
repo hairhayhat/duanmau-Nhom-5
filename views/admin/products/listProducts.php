@@ -2,7 +2,7 @@
 <?php include '../views/admin/layout/sidebar.php' ?>
 <div class="page-body">
     <div class="title-header">
-        <h5>Products List</h5>
+        <h5>Danh sách sản phẩm</h5>
     </div>
 
     <div class="container-fluid">
@@ -17,6 +17,7 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Hình ảnh</th>
+                                            <th>SLug</th>
                                             <th>Tên</th>
                                             <th>Danh mục</th>
                                             <th>Thương hiệu</th>
@@ -38,15 +39,20 @@
                                                 </td>
 
                                                 <td>
+                                                    <a href="javascript:void(0)"><?= $product['slug'] ?></a>
+                                                </td>
+
+                                                <td>
                                                     <a href="javascript:void(0)"><?= $product['name'] ?></a>
                                                 </td>
 
                                                 <td>
-                                                    <a href="javascript:void(0)"><?= $product['category_id'] ?></a>
+                                                    <strong><a href="javascript:void(0)"><?= $product['category_name'] ?></a></strong>
                                                 </td>
 
+
                                                 <td>
-                                                    <a href="javascript:void(0)"><?= $product['brand_id'] ?></a>
+                                                    <a href="javascript:void(0)"><?= $product['brand_name'] ?></a>
                                                 </td>
 
 
@@ -119,7 +125,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-md-12 footer-copyright text-center">
-                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                    <p class="mb-0">Du an mau nhom 5</p>
                 </div>
             </div>
         </footer>
