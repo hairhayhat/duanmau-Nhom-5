@@ -3,7 +3,7 @@ require_once '../connect/connect.php';
 class User extends connect{
     public function register($name,$email,$password): bool{
         $hash_password = password_hash(password: $password, algo: PASSWORD_DEFAULT);
-        $sql = 'INSERT INTO users(name, email, password,role_id) VALUES (?,?,?,1)';
+        $sql = 'INSERT INTO users(name, email, password,role_id) VALUES (?,?,?,2)';
         $stmt = $this->connect()->prepare(query:$sql);
         return $stmt->execute(params: [$name, $email, $hash_password]);
     }
