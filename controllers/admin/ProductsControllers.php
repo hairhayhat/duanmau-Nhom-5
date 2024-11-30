@@ -135,19 +135,16 @@ class ProductsAdminController extends ProductsAdminModle
             exit;
         }
     }
-
-    public function editProduct()
+    public function saveEditProduct()
     {
-        $products = $this->getProductById($_GET['id']);
+        $id = $_GET['id'];
+        $products = $this->getProductById($id);
         $variants = $this->getProductVariantByid($_GET['id']);
         $galleries = $this->getProductGalleryByid($_GET['id']);
         $categories = $this->getAllCategories();
         $brands = $this->getAllBrands();
         $colors = $this->getAllColors();
-        include '../views/admin/products/editProducts.php';
-    }
-    public function saveEditProduct()
-    {
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['saveEditProduct'])) {
             $errors = [];
             $data = $_POST; // Lưu toàn bộ dữ liệu người dùng nhập
@@ -199,25 +196,27 @@ class ProductsAdminController extends ProductsAdminModle
             $_SESSION['errors'] = $errors;
             $_SESSION['old_data'] = $data;
 
-            if ($errors) {
-                header('Location: index.php?act=add-products');
-                exit;
-            }
-
             $file = $_FILES['image'];
             $file_name = basename($file['name']);
             $extension = pathinfo($file_name, PATHINFO_EXTENSION);
             $base_name = preg_replace('/[^a-zA-Z0-9]/', '', pathinfo($file_name, PATHINFO_FILENAME));
             $image = uniqid() . '-' . $base_name . '.' . $extension;
+
             if ($file['size'] > 0) {
                 if (move_uploaded_file($file['tmp_name'], './images/product/' . $image)) {
+                    // Xóa ảnh cũ nếu có
                     if (isset($_POST['old_product_image']) && file_exists('./images/product/' . $_POST['old_product_image'])) {
                         unlink('./images/product/' . $_POST['old_product_image']);
                     }
+                } else {
+                    // Thêm thông báo lỗi nếu file không tải lên được
+                    $_SESSION['error'] = 'Có lỗi khi tải ảnh lên.';
                 }
             } else {
-                $image = $_POST['old_product_image'];
+                // Nếu không có ảnh mới, giữ ảnh cũ
+                $image = isset($_POST['old_product_image']) ? $_POST['old_product_image'] : '';
             }
+
             $updateProduct = $this->updateProduct(
                 $_GET['id'],
                 $_POST['name'],
@@ -230,21 +229,33 @@ class ProductsAdminController extends ProductsAdminModle
                 $_POST['slug']
             );
             if ($updateProduct) {
-                if (isset($_POST['color'])) {
-                    foreach ($_POST['color'] as $key => $color) {
+
+                // Inside the saveEditProduct method
+                if (isset($_POST['variant_color'])) {
+                    foreach ($_POST['variant_color'] as $key => $variant_color) {
+                        // Ensure the color is valid
+                        if (empty($variant_color)) {
+                            $errors['variant_color'][$key] = 'Vui lòng chọn màu của biến thể ' . ($key + 1);
+                        }
+
+                        $variant_color_id = $variant_color;  // Assuming variant_color contains the correct ID
+
+                        // Now check prices and quantities for variants
                         if (isset($_POST['variant_id'][$key]) && !empty($_POST['variant_id'][$key])) {
+                            // Update variant
                             $this->updateVariant(
                                 $_POST['variant_id'][$key],
                                 $_GET['id'],
-                                $color,
+                                $variant_color_id,
                                 $_POST['variant_price'][$key],
                                 $_POST['variant_sale_price'][$key],
                                 $_POST['variant_quantity'][$key]
                             );
                         } else {
-                            $addProductVariant = $this->addProducts_Variant(
+                            // Add new variant
+                            $this->addProducts_Variant(
                                 $_GET['id'],
-                                $variant_color,
+                                $variant_color_id,
                                 $_POST['variant_price'][$key],
                                 $_POST['variant_sale_price'][$key],
                                 $_POST['variant_quantity'][$key]
@@ -252,24 +263,32 @@ class ProductsAdminController extends ProductsAdminModle
                         }
                     }
                 }
+
+
                 if (!empty($_FILES['gallery_image']['name'][0])) {
-                    if (!empty($_FILES['gallery_image']['name'][0])) {
-                        $file = $_FILES['gallery_image'];
-                        for ($i = 0; $i < count($file['name']); $i++) {
-                            $file_name = basename($file['name'][$i]); // Lấy tên file
-                            $extension = pathinfo($file_name, PATHINFO_EXTENSION); // Lấy phần mở rộng của file
-                            $base_name = preg_replace('/[^a-zA-Z0-9]/', '', pathinfo($file_name, PATHINFO_FILENAME)); // Xử lý tên file
-                            // Tạo tên file mới
-                            $gallery_image = uniqid() . '-' . $base_name . '.' . $extension;
-                            move_uploaded_file($file['tmp_name'][$i], './images/gallery/' . $gallery_image);
-                            $this->addProduct_Gallery($_GET['id'], $gallery_image);
+                    $file = $_FILES['gallery_image'];
+                    for ($i = 0; $i < count($file['name']); $i++) {
+                        $file_name = basename($file['name'][$i]);
+                        $extension = pathinfo($file_name, PATHINFO_EXTENSION);
+                        $base_name = preg_replace('/[^a-zA-Z0-9]/', '', pathinfo($file_name, PATHINFO_FILENAME));
+                        $gallery_image = uniqid() . '-' . $base_name . '.' . $extension;
+
+                        if (isset($_POST['old_gallery_image']) && file_exists('./images/gallery/' . $_POST['old_gallery_image'])) {
+                            unlink('./images/gallery/' . $_POST['old_gallery_image']);
                         }
+                        move_uploaded_file($file['tmp_name'][$i], './images/gallery/' . $gallery_image);
+                        $this->addProduct_Gallery($_GET['id'], $gallery_image);
                     }
                 } else {
                     $gallery_image = $_POST['old_gallery_image'];
                 }
+
+                $_SESSION['success'] = 'Sản phẩm đã được cập nhật thành công!';
+                header("Location: index.php?act=list-products");
             }
         }
+        include '../views/admin/products/editProducts.php';
     }
+
 
 }

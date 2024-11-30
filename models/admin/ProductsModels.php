@@ -182,7 +182,7 @@ class ProductsAdminModle extends Connect
     public function updateVariant($variant_id, $product_id, $variant_color_id, $variant_price, $variant_sale_price, $quantity)
     {
         $sql = "UPDATE product_variants 
-            SET product_id=?, variant_color_id = ?, variant_price = ?, variant_sale_price = ?, quantity = ?, updated_at = CURRENT_TIMESTAMP 
+            SET product_id=?, variant_color_id = ?, variant_price = ?, variant_sale_price = ?, quantity = ?, update_at = CURRENT_TIMESTAMP 
             WHERE variant_id = ?";
         $stmt = $this->connect()->prepare($sql);
         return $stmt->execute([$product_id, $variant_color_id, $variant_price, $variant_sale_price, $quantity, $variant_id]);

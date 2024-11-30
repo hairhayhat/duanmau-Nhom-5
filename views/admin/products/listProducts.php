@@ -57,7 +57,8 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="index.php?act=edit-products&id=<?=$product['product_id']?>">
+                                                        <a
+                                                            href="index.php?act=edit-products&id=<?= $product['product_id'] ?>">
                                                             <span class="lnr lnr-pencil"></span>
                                                         </a>
                                                     </li>

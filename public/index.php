@@ -39,9 +39,6 @@ switch ($action) {
         $productAdmin->saveAddProducts();
         break;
     case 'edit-products':
-        $productAdmin->editProduct();
-        break;
-    case 'save-edit-products':
         $productAdmin->saveEditProduct();
         break;
 
