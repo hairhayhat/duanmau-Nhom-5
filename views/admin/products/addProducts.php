@@ -334,6 +334,5 @@
 </script>
 
 <!--Xóa session -->
-<?php unset($_SESSION['errors']); ?>
 
 <?php include '../views/admin/layout/footer.php' ?>

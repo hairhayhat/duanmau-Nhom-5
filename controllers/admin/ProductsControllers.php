@@ -121,7 +121,13 @@ class ProductsAdminController extends ProductsAdminModle
                         }
                     }
 
-                    // Sau khi thêm sản phẩm thành công, chuyển hướng về trang danh sách sản phẩm
+                    // Sau khi thêm sản phẩm thành công, chuyển hướng về trang danh sách sản phẩm và xóa các session
+
+
+                    unset($_SESSION['errors']);
+                    unset($_SESSION['old_data']);
+
+
                     header('Location: index.php?act=list-products');
                     exit;
                 }

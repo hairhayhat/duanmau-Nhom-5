@@ -24,6 +24,8 @@ switch ($action) {
     case 'client':
         include '../views/client/index.php';
         break;
+
+
     //Sản phẩm của admin
     case 'list-products':
         $productAdmin->listProduct();
@@ -34,6 +36,8 @@ switch ($action) {
     case 'save-add-products':
         $productAdmin->saveAddProducts();
         break;
+
+
     //Danh mục của admin
     case 'list-categories':
         $categoryAdmin->listCategories();
@@ -63,6 +67,9 @@ switch ($action) {
     case 'list-products-client':
         include '../views/client/products/listProducts.php';
         break;
+
+
+    //đăng nhập đăng xuất
     case 'login':
         $auth->signin();
         break;
