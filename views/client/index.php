@@ -432,7 +432,7 @@
 
     <!-- banner section start -->
     <section class="ratio2_1 banner-style-2">
-        <div class="container">
+iner
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="collection-banner p-bottom p-center text-center">
