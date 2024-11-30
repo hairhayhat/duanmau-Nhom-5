@@ -3,6 +3,7 @@
 
 
 <!-- Mirrored from themes.pixelstrap.com/voxo/back-end/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Nov 2024 03:23:35 GMT -->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,9 +56,30 @@
 
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="admin/assets/css/responsive.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Toast js -->
+    <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
 </head>
 
 <body>
+
+    <?php
+    if (isset($_SESSION['error'])) {
+        echo "<script type='text/javascript'>
+                toastr.warning('{$_SESSION['error']}')
+                </script>";
+        unset($_SESSION['error']);
+    }
+    if (isset($_SESSION['success'])) {
+        echo "<script type='text/javascript'>
+                toastr.success('{$_SESSION['success']}')
+                </script>";
+        unset($_SESSION['success']);
+    }
+    ?>
     <!-- tap on top start -->
     <div class="tap-top">
         <span class="lnr lnr-chevron-up"></span>

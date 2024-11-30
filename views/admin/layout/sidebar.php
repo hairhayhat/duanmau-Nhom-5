@@ -147,32 +147,16 @@
 
                         <li class="sidebar-list">
                             <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                                <i data-feather="align-left"></i>
-                                <span>Menus</span>
-                            </a>
-                            <ul class="sidebar-submenu">
-                                <li>
-                                    <a href="menu-lists.html">Menu Lists</a>
-                                </li>
-
-                                <li>
-                                    <a href="create-menu.html">Create Menu</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="sidebar-list">
-                            <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                 <i data-feather="tag"></i>
-                                <span>Coupons</span>
+                                <span>Phiếu giảm giá</span>
                             </a>
                             <ul class="sidebar-submenu">
                                 <li>
-                                    <a href="coupon-list.html">Coupon List</a>
+                                    <a href="index.php?act=coupon-list">Danh sách phiếu giảm giá</a>
                                 </li>
 
                                 <li>
-                                    <a href="create-coupon.html">Create Coupon</a>
+                                    <a href="index.php?act=coupon-create">Thêm phiếu giảm giá</a>
                                 </li>
                             </ul>
                         </li>

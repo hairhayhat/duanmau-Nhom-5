@@ -96,6 +96,7 @@
                                     <div id="variant" style="display: none;">
                                         <div class="border rounded px-4 py-4 mb-3" style="background-color: #f0f0f0;">
                                             <!-- Kích thước và màu sắc -->
+
                                             <div class="row mb-4">
                                                 <div class="col-md-10">
                                                     <label class="form-label-title">Màu:</label>
@@ -257,17 +258,17 @@
                             <!-- Checkboxes cho màu -->
                             <div class="d-flex flex-wrap col-md-12">
                                 <?php foreach ($colors as $color): ?>
-                                                                                                                <div class="form-check me-3">
-                                                                                                                    <!-- Đặt màu nền cho checkbox -->
-                                                                                                                    <input class="form-check-input" type="checkbox"
-                                                                                                                        name="variant_color[]"
-                                                                                                                    value="<?= $color['variant_color_id'] ?>"
-                                                                                                                        id="color_<?= $color['variant_color_id'] ?>"
-                                                                                                                        style="background-color: <?= $color['color_code'] ?>; width: 20px; height: 20px;">
-                                                                                                                    <label class="form-check-label"
-                                                                                                                        for="color_<?= $color['variant_color_id'] ?>">
-                                                                                                                    </label>
-                                                                                                                </div>
+                                <div class="form-check me-3">
+                                <!-- Đặt màu nền cho checkbox -->
+                                <input class="form-check-input" type="checkbox"
+                                name="variant_color[]"
+                                value="<?= $color['variant_color_id'] ?>"
+                                id="color_<?= $color['variant_color_id'] ?>"
+                                style="background-color: <?= $color['color_code'] ?>; width: 20px; height: 20px;">
+                                <label class="form-check-label"
+                                for="color_<?= $color['variant_color_id'] ?>">
+                                </label>
+                                </div>
                                 <?php endforeach; ?>
                                     <i>(*lưu ý: checkbox hiện viền màu xang là đã chọn)</i>
                             </div>

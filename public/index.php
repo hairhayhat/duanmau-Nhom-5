@@ -4,6 +4,7 @@ require_once '../connect/connect.php';
 require_once '../controllers/admin/CategoriesControllers.php';
 require_once '../controllers/admin/ProductsControllers.php';
 require_once '../controllers/admin/BrandsControllers.php';
+require_once '../controllers/admin/CouponAdminControllers.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/HomeController.php';
 
@@ -16,6 +17,7 @@ $action = isset($_GET['act']) ? $_GET['act'] : 'admin';
 $categoryAdmin = new CategoryAdminController();
 $productAdmin = new ProductsAdminController();
 $brandAdmin = new BrandsControllers();
+$coupon = new CouponAdminControllers();
 $auth = new AuthController();
 $home = new HomeController();
 switch ($action) {
@@ -25,7 +27,6 @@ switch ($action) {
     case 'client':
         $home->index();
         break;
-
 
     //Sản phẩm của admin
     case 'list-products':
@@ -37,7 +38,12 @@ switch ($action) {
     case 'save-add-products':
         $productAdmin->saveAddProducts();
         break;
-
+    case 'edit-products':
+        $productAdmin->editProduct();
+        break;
+    case 'save-edit-products':
+        $productAdmin->saveEditProduct();
+        break;
 
     //Danh mục của admin
     case 'list-categories':
@@ -61,7 +67,15 @@ switch ($action) {
         $brandAdmin->saveEditBrand();
         break;
 
-        //Chi tiết sản phẩm
+    //coupon
+    case 'coupon-list':
+        $coupon->index();
+        break;
+    case 'coupon-create':
+        $coupon->create();
+        break;
+
+    //Chi tiết sản phẩm
     case 'product_detail':
         $home->getProductDetail();
         break;
