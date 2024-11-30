@@ -5,6 +5,7 @@ require_once '../controllers/admin/CategoriesControllers.php';
 require_once '../controllers/admin/ProductsControllers.php';
 require_once '../controllers/admin/BrandsControllers.php';
 require_once '../controllers/client/AuthController.php';
+require_once '../controllers/client/HomeController.php';
 
 
 
@@ -16,13 +17,13 @@ $categoryAdmin = new CategoryAdminController();
 $productAdmin = new ProductsAdminController();
 $brandAdmin = new BrandsControllers();
 $auth = new AuthController();
-
+$home = new HomeController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
         break;
     case 'client':
-        include '../views/client/index.php';
+        $home->index();
         break;
     //Sản phẩm của admin
     case 'list-products':
@@ -56,7 +57,10 @@ switch ($action) {
         $brandAdmin->saveEditBrand();
         break;
 
-
+        //Chi tiết sản phẩm
+    case 'product_detail':
+        $home->getProductDetail();
+        break;
 
 
     // sản phẩm của client
