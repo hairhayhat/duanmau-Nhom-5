@@ -12,7 +12,7 @@ require_once '../controllers/client/CartController.php';
 
 
 
-$action = isset($_GET['act']) ? $_GET['act'] : 'admin';
+$action = isset($_GET['act']) ? $_GET['act'] : 'client';
 
 $categoryAdmin = new CategoryAdminController();
 $productAdmin = new ProductsAdminController();
@@ -91,14 +91,7 @@ switch ($action) {
         $coupon->delete();
         break;
 
-    //Chi tiết sản phẩm
-
-
-    // sản phẩm của client
-    case 'list-products-client':
-
-        break;
-
+    //hóa đơn
     case 'cart':
         include '../views/client/cart/cart.php';
         break;
@@ -111,5 +104,8 @@ switch ($action) {
         break;
     case 'register':
         $auth->registers();
+        break;
+    case 'logout':
+        $auth->logout();
         break;
 }

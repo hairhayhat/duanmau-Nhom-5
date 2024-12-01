@@ -62,6 +62,10 @@ class AuthController extends User
                 $_SESSION['user'] = $user;
                 if ($user['role_id'] === 1) {
                     $_SESSION['success'] = 'Đăng nhập thanh cong';
+                    $userName = $user['name'];
+                    $userId = $user['user_id'];
+                    $userEmail = $user['email'];
+                    $userRole = $user['role_id'];
                     header(header: 'Location:index.php?act=client');
                     exit;
                 } elseif ($user['role_id'] === 2) {
@@ -76,5 +80,16 @@ class AuthController extends User
             }
         }
         include '../views/client/auth/login.php';
+    }
+
+    public function logout(): void
+    {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        unset($_SESSION['user']);
+        unset($_SESSION['success']);
+        header('Location: index.php?act=client');
+        exit();
     }
 }
