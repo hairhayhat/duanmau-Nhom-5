@@ -81,6 +81,15 @@ switch ($action) {
     case 'coupon-create':
         $coupon->create();
         break;
+    case 'coupon-edit':
+        $coupon->edit();
+        break;
+    case 'coupon-update':
+        $coupon->update();
+        break;
+    case 'coupon-delete':
+        $coupon->delete();
+        break;
 
     //Chi tiết sản phẩm
 

@@ -22,15 +22,16 @@ class Coupon extends Connect
     {
         $sql = 'SELECT * FROM coupon WHERE coupon_id = ?';
         $stmt = $this->connect()->prepare($sql);
-        return $stmt->execute([$_GET['coupon_id']]);
+        $stmt->execute([$_GET['coupon_id']]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function updateCoupon($name, $start_date, $end_date, $quantity, $status, $coupon_code, $type, $coupon_value)
     {
-        $sql = 'UPDATE coupon SET name = ?, start_date = ?,end_date = ?,quantity = ?,status = ?,coupon_code = ?,coupon_type = ?,updated_at = CURRENT_TIMESTAMP
+        $sql = 'UPDATE coupon SET name = ?, start_date = ?,end_date = ?,quantity = ?,status = ?,coupon_code = ?,type = ?,coupon_value=?,updated_at = now()
                 WHERE coupon_id = ?';
         $stmt = $this->connect()->prepare($sql);
-        return $stmt->execute([$name, $start_date, $end_date, $quantity, $status, $coupon_code, $type, $coupon_value, [$_GET['coupon_id']]]);
+        return $stmt->execute([$name, $start_date, $end_date, $quantity, $status, $coupon_code, $type, $coupon_value, $_GET['coupon_id']]);
     }
 
     public function deteleCoupon()

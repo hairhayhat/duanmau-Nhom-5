@@ -5,7 +5,7 @@
 
     <!-- Start Container Fluid -->
     <div class="container-fluid">
-        <form action="?act=coupon-create" method="post">
+        <form action="?act=coupon-update&&coupon_id=<?= $coupon['coupon_id']?>" method="post">
             <div class="row">
                 <div class="col-lg-5">
                     <div class="card">
@@ -16,7 +16,7 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="status" value="Active"
+                                        <input class="form-check-input" type="radio" name="status" value="Active" <?=$coupon['status'] == 'Active' ? 'checked' : '' ?>
                                             id="flexRadioDefault10">
                                         <label class="form-check-label" for="flexRadioDefault10">
                                             Đang hoạt động
@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="status" value="Hidden"
+                                        <input class="form-check-input" type="radio" name="status" value="Hidden" <?= $coupon['status'] == 'Hidden' ? 'checked' : '' ?>
                                             id="flexRadioDefault10">
                                         <label class="form-check-label" for="flexRadioDefault10">
                                            Đã hết hạn
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="status" value="Future Plan"
+                                        <input class="form-check-input" type="radio" name="status"  value="Future Plan" <?= $coupon['status'] == 'Future Plan' ? 'checked' : '' ?>
                                             id="flexRadioDefault11">
                                         <label class="form-check-label" for="flexRadioDefault11">
                                             Kế hoạch tương lai
@@ -51,14 +51,14 @@
                         <div class="card-body">
                             <div class="mb-3">
                                 <label for="start-date" class="form-label text-dark">Ngày bắt đầu</label>
-                                <input type="date" id="start-date" class="form-control" name="start_date">
+                                <input type="date" id="start-date" class="form-control" name="start_date" value=<?=$coupon['start_date']?>> 
                             </div>
                             <?php if (isset($_SESSION['errors']['start_date'])): ?>
                                 <p class="text-danger"><?= $_SESSION['errors']['start_date'] ?></p>
                             <?php endif ?>
                             <div class="mb-3">
                                 <label for="end-date" class="form-label text-dark">Ngày kết thúc</label>
-                                <input type="date" id="end-date" class="form-control" name="end_date">
+                                <input type="date" id="end-date" class="form-control" name="end_date" value=<?=$coupon['end_date']?>>
                                 <?php if (isset($_SESSION['errors']['end_date'])): ?>
                                     <p class="text-danger"><?= $_SESSION['errors']['end_date'] ?></p>
                                 <?php endif ?>
@@ -77,7 +77,7 @@
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label for="coupons-code" class="form-label">Tên mã giảm giá</label>
-                                        <input type="text" id="coupons-code" name="name" class="form-control"
+                                        <input type="text" id="coupons-code" name="name" value=<?=$coupon['name']?> class="form-control"
                                             placeholder="Code enter">
                                     </div>
                                     <?php if (isset($_SESSION['errors']['name'])): ?>
@@ -87,7 +87,7 @@
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label for="coupons-limits" class="form-label">Mã giảm</label>
-                                        <input type="text" id="coupons-limits" name="coupon_code" class="form-control"
+                                        <input type="text" id="coupons-limits" name="coupon_code" value=<?=$coupon['coupon_code']?> class="form-control"
                                             placeholder="Tên mã giảm giá">
                                     </div>
                                     <?php if (isset($_SESSION['errors']['coupon_code'])): ?>
@@ -97,7 +97,7 @@
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <label for="coupons-limits" class="form-label">Số lượng</label>
-                                        <input type="number" id="coupons-limits" name="quantity" class="form-control"
+                                        <input type="number" id="coupons-limits" name="quantity" value=<?=$coupon['quantity']?> class="form-control"
                                             placeholder="Số lượng mã giảm">
                                     </div>
                                     <?php if (isset($_SESSION['errors']['quantity'])): ?>
@@ -109,7 +109,7 @@
                             <div class="row mb-3">
                                 <div class="col-lg-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="type" value="Percentage"
+                                        <input class="form-check-input" type="radio" name="type" value="Percentage" <?= $coupon['type'] == 'Percentage' ? 'checked' : '' ?>
                                             id="flexRadioDefault13">
                                         <label class="form-check-label" for="flexRadioDefault13">
                                             Giảm phần trăm
@@ -118,7 +118,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="type" value="Fixed Amount"
+                                        <input class="form-check-input" type="radio" name="type" value="Fixed Amount" <?= $coupon['type'] == 'Fixed Amount' ? 'checked' : '' ?>
                                             id="flexRadioDefault14">
                                         <label class="form-check-label" for="flexRadioDefault14">
                                             Số tiền cố định
@@ -133,7 +133,7 @@
                                 <div class="col-lg-12">
                                     <div class="">
                                         <label for="discount-value" class="form-label">Giá trị giảm</label>
-                                        <input type="text" id="discount-value" name="coupon_value" class="form-control"
+                                        <input type="text" id="discount-value" name="coupon_value" value=<?=$coupon['coupon_value']?>  class="form-control"
                                             placeholder="Nhập giá trị giảm">
                                     </div>
                                     <?php if (isset($_SESSION['errors']['coupon_value'])): ?>
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="card-footer border-top">
-                        <button type="submit" name="coupon-create" class="btn btn-primary">Thêm mới mã giảm giá</button>
+                        <button type="submit" name="coupon-update" class="btn btn-primary">Cập nhật mã giảm giá</button>
                     </div>
                 </div>
             </div>
