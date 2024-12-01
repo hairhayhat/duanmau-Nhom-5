@@ -82,14 +82,7 @@ switch ($action) {
         $coupon->create();
         break;
 
-    //Chi tiết sản phẩm
-
-
-    // sản phẩm của client
-    case 'list-products-client':
-
-        break;
-
+    //hóa đơn
     case 'cart':
         include '../views/client/cart/cart.php';
         break;
