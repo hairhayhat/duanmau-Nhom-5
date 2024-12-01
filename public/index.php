@@ -7,7 +7,7 @@ require_once '../controllers/admin/BrandsControllers.php';
 require_once '../controllers/admin/CouponAdminControllers.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/HomeController.php';
-
+require_once '../controllers/client/CartController.php';
 
 
 
@@ -20,6 +20,7 @@ $brandAdmin = new BrandsControllers();
 $coupon = new CouponAdminControllers();
 $auth = new AuthController();
 $home = new HomeController();
+$cart = new CartController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
@@ -83,6 +84,11 @@ switch ($action) {
         include '../views/client/products/listProducts.php';
         break;
 
+    case 'cart':
+        include '../views/client/cart/cart.php';
+        break;
+    case 'addToCart-byNow':
+        $cart->addtoCartOrByNow();
 
     //đăng nhập đăng xuất
     case 'login':
