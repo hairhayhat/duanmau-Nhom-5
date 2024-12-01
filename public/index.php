@@ -12,7 +12,7 @@ require_once '../controllers/client/HomeController.php';
 
 
 
-$action = isset($_GET['act']) ? $_GET['act'] : 'admin';
+$action = isset($_GET['act']) ? $_GET['act'] : 'client';
 
 $categoryAdmin = new CategoryAdminController();
 $productAdmin = new ProductsAdminController();
@@ -81,20 +81,14 @@ switch ($action) {
         $coupon->create();
         break;
 
-    //Chi tiết sản phẩm
-
-
-    // sản phẩm của client
-    case 'list-products-client':
-
-        break;
-
-
     //đăng nhập đăng xuất
     case 'login':
         $auth->signin();
         break;
     case 'register':
         $auth->registers();
+        break;
+    case 'logout':
+        $auth->logout();
         break;
 }
