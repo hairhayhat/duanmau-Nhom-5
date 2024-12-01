@@ -12,7 +12,7 @@ class Connect
             $serverName = 'localhost';
             $userName = 'root';
             $passWord = '';
-            $myDB = 'du_an _mau_1';
+            $myDB = 'du_an_mau_1';
 
             try {
                 // Tạo kết nối PDO và lưu vào biến $this->conn
