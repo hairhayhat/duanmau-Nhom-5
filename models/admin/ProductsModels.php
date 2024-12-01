@@ -70,6 +70,21 @@ class ProductsAdminModle extends Connect
         return $stmt->fetchAll();
     }
 
+    public function getAllProductByCate($category_id)
+    {
+        $sql = 'SELECT p.product_id, p.name, p.description, p.price, p.image, c.name AS category_name, b.name AS brand_name
+            FROM products p
+            JOIN category c ON p.category_id = c.category_id
+            JOIN brands b ON p.brand_id = b.brand_id
+            WHERE c.category_id = :category_id';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(':category_id', $category_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $products;
+    }
+
+
 
     public function getAllBrands()
     {
@@ -154,7 +169,8 @@ class ProductsAdminModle extends Connect
             product_variants.variant_sale_price AS variant_sale_price,
             product_variants.quantity AS variant_quantity,
             variant_colors.variant_color_id AS variant_color_id,
-            variant_colors.color_name AS variant_color_name
+            variant_colors.color_name AS variant_color_name,
+            variant_colors.color_code as variant_color_code
         FROM product_variants
         LEFT JOIN variant_colors ON product_variants.variant_color_id = variant_colors.variant_color_id WHERE product_variants.product_id = ?";
         $stmt = $this->connect()->prepare($sql);

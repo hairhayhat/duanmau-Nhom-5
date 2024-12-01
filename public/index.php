@@ -24,8 +24,17 @@ switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
         break;
+
+    //client
     case 'client':
         $home->index();
+        break;
+    case 'detail-category':
+        $home->getDetailCategory();
+        $home->header();
+        break;
+    case 'detail-product':
+        $home->detailProduct();
         break;
 
     //Sản phẩm của admin
@@ -73,14 +82,11 @@ switch ($action) {
         break;
 
     //Chi tiết sản phẩm
-    case 'product_detail':
-        $home->getProductDetail();
-        break;
 
 
     // sản phẩm của client
     case 'list-products-client':
-        include '../views/client/products/listProducts.php';
+
         break;
 
 
