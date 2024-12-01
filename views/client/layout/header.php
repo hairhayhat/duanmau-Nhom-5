@@ -70,222 +70,6 @@
                                         <p class="gradient-title">gia dụng</p>
                                     </a>
                                 </div>
-                                <div class="category-menu">
-                                    <div class="category-dropdown">
-                                        <div class="close-btn d-xl-none">
-                                            Category List
-                                            <span class="back-category"><i class="fa fa-angle-left"></i>
-                                            </span>
-                                        </div>
-                                        <ul>
-                                            <li class="submenu">
-                                                <a href="javascript:void(0)">watches</a>
-                                                <ul class="category-mega-menu">
-                                                    <li>
-                                                        <div class="row">
-                                                            <div class="col-xl-3">
-                                                                <div class="category-childmenu">
-                                                                    <div class="title-category">
-                                                                        <h6>Watch Brands</h6>
-                                                                    </div>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Coros</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Titan</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Citizen</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Casio</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Movado</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Tissot</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-3">
-                                                                <div class="category-childmenu">
-                                                                    <div class="title-category">
-                                                                        <h6>Watch Display</h6>
-                                                                    </div>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Analog</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Digital</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Hybrid</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Tactile</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-left-sidebar.html">Touchscreen</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-3">
-                                                                <div class="category-childmenu">
-                                                                    <div class="title-category">
-                                                                        <h6>Watch Style</h6>
-                                                                    </div>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Casual</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Dress</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Fashion</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Luxury</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-3">
-                                                                <div class="category-banner">
-                                                                    <img src="client/assets/images/electronics/banner/4.jpg"
-                                                                        class="img-fluid blur-up lazyload" alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li>
-                                                <a href="shop-left-sidebar.html">footwear</a>
-                                            </li>
-
-                                            <li class="submenu">
-                                                <a href="javascript:void(0)">clothing</a>
-                                                <ul class="category-mega-menu">
-                                                    <li>
-                                                        <div class="row">
-                                                            <div class="col-xl-3">
-                                                                <div class="category-childmenu">
-                                                                    <div class="title-category">
-                                                                        <h6>Women's fashion</h6>
-                                                                    </div>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Dress</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Skirts</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Western
-                                                                                wear</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Etahnic
-                                                                                wear</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Sports
-                                                                                wear</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-3">
-                                                                <div class="category-childmenu">
-                                                                    <div class="title-category">
-                                                                        <h6>Men's fashion</h6>
-                                                                    </div>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Sports
-                                                                                wear</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Etahnic
-                                                                                wear</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">Western
-                                                                                wear</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-3">
-                                                                <div class="category-childmenu">
-                                                                    <div class="title-category">
-                                                                        <h6>Accesories</h6>
-                                                                    </div>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-left-sidebar.html">earrings</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">fashion
-                                                                                jewellery</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">ties</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">caps and
-                                                                                hats</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-left-sidebar.html">cufflinks</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-left-sidebar.html">precious
-                                                                                jewellery</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-left-sidebar.html">necklaces</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-3">
-                                                                <div class="category-banner">
-                                                                    <img src="client/assets/images/banner/1.jpg"
-                                                                        class="img-fluid blur-up lazyload" alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li>
-                                                <a href="shop-left-sidebar.html">Accessories</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-left-sidebar.html">Home & decor</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-left-sidebar.html">Bags</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-left-sidebar.html">Kitchan</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                             <nav>
                                 <div class="main-navbar">
@@ -305,40 +89,14 @@
                                                 <a href="javascript:void(0)" class="nav-link menu-title">home</a>
                                             </li>
                                             <li class="dropdown">
-                                                <a href="javascript:void(0)" class="nav-link menu-title">shop</a>
+                                                <a href="javascript:void(0)" class="nav-link menu-title">Categories</a>
                                                 <ul class="nav-submenu menu-content">
-                                                    <li>
-                                                        <a href="shop-canvas-filter.html">Shop Canvas Filter</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-category-slider.html">Shop Category Filter</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-filter-hide.html">Shop Filter Hide</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-left-sidebar.html">Shop Left Sidebar
-                                                            <span>Trending</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-list-infinite.html">Shop List Infinite</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-list.html">Shop List</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-no-sidebar.html">Shop No Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-right-sidebar.html">Shop Right Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-top-filter.html">Shop Top Filter</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-with-category.html">Shop With Category <span
-                                                                class="tren-budge">New</span></a>
-                                                    </li>
+                                                    <?php foreach ($categories as $category): ?>
+                                                        <li>
+                                                            <a
+                                                                href="index.php?act=detail-category&category_id=<?= $category['category_id'] ?>"><?= $category['name'] ?></a>
+                                                        </li>
+                                                    <?php endforeach ?>
                                                 </ul>
                                             </li>
                                             <li class="dropdown">
@@ -486,10 +244,10 @@
                                         <div class="onhover-div profile-dropdown">
                                             <ul>
                                                 <li>
-                                                    <a href="log-in.html" class="d-block">Login</a>
+                                                    <a href="index.php?act=login" class="d-block">Login</a>
                                                 </li>
                                                 <li>
-                                                    <a href="sign-up.html" class="d-block">Register</a>
+                                                    <a href="index.php?act=register" class="d-block">Register</a>
                                                 </li>
                                             </ul>
                                         </div>

@@ -57,11 +57,18 @@ class AuthController extends User
                 exit();
             }
 
-            $login = $this->login(email: $_POST['email'], password: $_POST['password']);
-            if ($login) {
-                $_SESSION['success'] = 'Đăng nhập thanh cong';
-                header(header: 'Location:/');
-                exit();
+            $user = $this->login($_POST['email'], $_POST['password']);
+            if ($user) {
+                $_SESSION['user'] = $user;
+                if ($user['role_id'] === 1) {
+                    $_SESSION['success'] = 'Đăng nhập thanh cong';
+                    header(header: 'Location:index.php?act=client');
+                    exit;
+                } elseif ($user['role_id'] === 2) {
+                    $_SESSION['success'] = 'Đăng nhập thanh cong';
+                    header(header: 'Location:index.php?act=admin');
+                    exit;
+                }
             } else {
                 $_SESSION['errors'] = 'Đăng nhập that bai';
                 header(header: 'Location: ' . $_SERVER['HTTP_REFERER']);
