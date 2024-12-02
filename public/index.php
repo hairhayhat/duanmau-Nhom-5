@@ -93,10 +93,11 @@ switch ($action) {
 
     //hóa đơn
     case 'cart':
-        include '../views/client/cart/cart.php';
+        include '../models/client/CartModels.php';
         break;
     case 'addToCart-byNow':
         $cart->addtoCartOrByNow();
+
 
     //đăng nhập đăng xuất
     case 'login':
