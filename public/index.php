@@ -12,6 +12,7 @@ require_once '../controllers/client/CartController.php';
 
 
 
+
 $action = isset($_GET['act']) ? $_GET['act'] : 'client';
 
 $categoryAdmin = new CategoryAdminController();
@@ -25,6 +26,7 @@ switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
         break;
+    
 
     //client
     case 'client':
@@ -37,6 +39,7 @@ switch ($action) {
     case 'detail-product':
         $home->detailProduct();
         break;
+    
 
     //Sản phẩm của admin
     case 'list-products':
@@ -93,10 +96,11 @@ switch ($action) {
 
     //hóa đơn
     case 'cart':
-        include '../models/client/CartModels.php';
+        $cart->index();
         break;
     case 'addToCart-byNow':
         $cart->addtoCartOrByNow();
+        break;
 
 
     //đăng nhập đăng xuất
