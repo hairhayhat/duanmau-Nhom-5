@@ -290,7 +290,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                                         <?php if (isset($_SESSION['user'])): ?>
                                                             <?php $user = $_SESSION['user']; ?>
                                                             <li>
-                                                                <a href="index.php?act=profile"
+                                                                <a href="index.php?act=profile.php"
                                                                     class="d-block"><?= $user['name'] ?></a>
                                                             </li>
                                                             <li>

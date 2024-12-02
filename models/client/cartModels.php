@@ -29,4 +29,10 @@ class Cart extends connect{
         $stmt = $this->connect()->prepare(query:$sql);
         return $stmt->execute(params:[$user_id,$product_id,$variant_id,$quantity]);
     }
+    public function checkCart():mixed{
+        $sql = 'SELECT * FROM cart WHERE user_id = ? AND product_id = ? AND variant_id = ?';
+        $stmt = $this->connect()->prepare(query:$sql);
+        $stmt->execute(params:[$_SESSION['user']['user_id'],$_POST['product_id'],$_POST['variant_id']]); 
+        return $stmt->fetch(); 
+    }
 }

@@ -12,8 +12,8 @@ class Coupon extends Connect
 
     public function addCoupon($name, $start_date, $end_date, $quantity, $status, $coupon_code, $type, $coupon_value)
     {
-        $sql = 'INSERT INTO coupon(name,start_date,end_date,quantity,status,coupon_code,type,coupon_value,created_at)
-        VALUES (?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP)';
+        $sql = 'INSERT INTO coupon(name,start_date,end_date,quantity,status,coupon_code,type,coupon_value,updated_at,created_at)
+        VALUES (?,?,?,?,?,?,?,?,now(),now())';
         $stmt = $this->connect()->prepare($sql);
         return $stmt->execute([$name, $start_date, $end_date, $quantity, $status, $coupon_code, $type, $coupon_value]);
     }

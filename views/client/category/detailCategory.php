@@ -77,7 +77,7 @@
                                         <?php foreach ($colors as $color): ?>
                                             <li>
                                                 <a href="javascript:void(0)">
-                                                    <i style="color:#00000"></i>
+                                                    <i style="color: #0000"></i>
                                                 </a>
                                             </li>
                                         <?php endforeach ?>
