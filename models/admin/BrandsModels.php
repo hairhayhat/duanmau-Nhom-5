@@ -32,4 +32,12 @@ class BrandsModels extends Connect
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getLimitBrand()
+    {
+        $sql = 'SELECT * FROM brands WHERE brand_id IN (3,6,8,10)';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

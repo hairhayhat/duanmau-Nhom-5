@@ -431,67 +431,52 @@
 <!-- home slider end -->
 
 <!-- banner section start -->
-<section class="ratio2_1 banner-style-2">
-    iner
-    <div class="row gy-4">
-        <div class="col-lg-4 col-md-6">
-            <div class="collection-banner p-bottom p-center text-center">
-                <a href="shop-left-sidebar.html" class="banner-img">
-                    <img src="client/assets/images/fashion/banner/1.jpg" class="bg-img blur-up lazyload" alt="">
-                </a>
-                <div class="banner-detail">
-                    <a href="javacript:void(0)" class="heart-wishlist">
-                        <i class="far fa-heart"></i>
-                    </a>
-                    <span class="font-dark-30">26% <span>OFF</span></span>
-                </div>
-                <a href="shop-left-sidebar.html" class="contain-banner">
-                    <div class="banner-content with-big">
-                        <h2 class="mb-2">New Hoodie</h2>
-                        <span>BUY ONE GET ONE FREE</span>
+<br><br>
+<section class="breadcrumb-section section-b-space">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="display-4 fw-bold">Chào mừng đến với Shop Đồ Điện</h3>
+            </div>
+            <div class="container">
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <p><i class="bi bi-geo-alt-fill text-primary me-2"></i><strong>Địa chỉ:</strong> 123 Đường ABC,
+                            Hà Nội</p>
                     </div>
-                </a>
+                    <div class="col-md-4">
+                        <p><i class="bi bi-envelope-fill text-primary me-2"></i><strong>Email:</strong>
+                            support@shopdodien.com</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><i class="bi bi-telephone-fill text-primary me-2"></i><strong>Hotline:</strong> 0123 456 789
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="collection-banner p-bottom p-center text-center">
-                <a href="shop-left-sidebar.html" class="banner-img">
-                    <img src="client/assets/images/fashion/banner/2.jpg" class="bg-img blur-up lazyload" alt="">
-                </a>
-                <div class="banner-detail">
-                    <a href="javacript:void(0)" class="heart-wishlist">
-                        <i class="far fa-heart"></i>
-                    </a>
-                    <span class="font-dark-30">50% <span>OFF</span></span>
-                </div>
-                <a href="shop-left-sidebar.html" class="contain-banner">
-                    <div class="banner-content with-big">
-                        <h2 class="mb-2">Women Fashion</h2>
-                        <span>New offer 50% off</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="collection-banner p-bottom p-center text-center">
-                <a href="shop-left-sidebar.html" class="banner-img">
-                    <img src="client/assets/images/fashion/banner/3.jpg" class="bg-img blur-up lazyload" alt="">
-                </a>
-                <div class="banner-detail">
-                    <a href="javacript:void(0)" class="heart-wishlist">
-                        <i class="far fa-heart"></i>
-                    </a>
-                    <span class="font-dark-30">36% <span>OFF</span></span>
-                </div>
-                <a href="shop-left-sidebar.html" class="contain-banner">
-                    <div class="banner-content with-big">
-                        <h2 class="mb-2">New Jacket</h2>
-                        <span>BUY ONE GET ONE FREE</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
     </div>
 </section>
 <!-- banner section end -->
@@ -502,22 +487,22 @@
         <div class="row m-0">
             <div class="col-sm-12 p-0">
                 <div class="title title-2 text-center">
-                    <h2>New Arrival</h2>
-                    <h5 class="text-color">Our collection</h5>
+                    <h2>HOT</h2>
+                    <h5 class="text-color">i luv u</h5>
                 </div>
                 <div class="product-wrapper product-style-2 slide-4 p-0 light-arrow bottom-space">
-                    <div>
+                    <?php foreach ($products as $product): ?>
                         <div class="product-box">
                             <div class="img-wrapper">
                                 <div class="front">
                                     <a href="product-left-sidebar.html">
-                                        <img src="client/assets/images/fashion/product/front/1.jpg"
+                                        <img src="./images/product/<?= $product['product_image'] ?>"
                                             class="bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
                                 <div class="back">
                                     <a href="product-left-sidebar.html">
-                                        <img src="client/assets/images/fashion/product/back/1.jpg"
+                                        <img src="./images/product/<?= $product['product_image'] ?>"
                                             class="bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
@@ -550,24 +535,8 @@
                             </div>
                             <div class="product-details">
                                 <div class="rating-details">
-                                    <span class="font-light grid-content">B&Y Jacket</span>
-                                    <ul class="rating mt-0">
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                    </ul>
+                                    <span class="font-light grid-content"><?= $product['category_name'] ?></span>
+                                    <span class="font-light grid-content"><?= $product['brand_name'] ?></span>
                                 </div>
                                 <div class="main-price">
                                     <a href="product-left-sidebar.html" class="font-default">
@@ -587,347 +556,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <div class="front">
-                                    <a href="product-left-sidebar.html">
-                                        <img src="client/assets/images/fashion/product/front/2.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="back">
-                                    <a href="product-left-sidebar.html">
-                                        <img src="client/assets/images/fashion/product/back/2.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="label-block">
-                                    <span class="label label-black">New</span>
-                                    <span class="label label-theme">50% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-bag"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="compare.html">
-                                                <i data-feather="refresh-cw"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.html" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <div class="rating-details">
-                                    <span class="font-light grid-content">Jacket</span>
-                                    <ul class="rating mt-0">
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="main-price">
-                                    <a href="product-left-sidebar.html" class="font-default">
-                                        <h5>Blue Leather Jacket</h5>
-                                    </a>
-                                    <div class="listing-content">
-                                        <span class="font-light">Regular Fit</span>
-                                        <p class="font-light">Lorem ipsum, dolor sit amet consectetur adipisicing
-                                            elit. Sit, deserunt? Asperiores aliquam voluptatum culpa aliquid ab
-                                            ducimus eaque illum, quibusdam reiciendis id ad consectetur quis, animi
-                                            qui, minus quidem eveniet! Dolorum magnam numquam, asperiores
-                                            accusantium architecto placeat quam officia, tempore repellendus.</p>
-                                    </div>
-                                    <h3 class="theme-color">$60.00</h3>
-                                    <button onclick="location.href = 'cart.html';" class="btn listing-content">Add
-                                        To Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <div class="front">
-                                    <a href="product-left-sidebar.html">
-                                        <img src="client/assets/images/fashion/product/front/3.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="back">
-                                    <a href="product-left-sidebar.html">
-                                        <img src="client/assets/images/fashion/product/back/3.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-bag"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="compare.html">
-                                                <i data-feather="refresh-cw"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.html" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <div class="rating-details">
-                                    <span class="font-light grid-content">Dress</span>
-                                    <ul class="rating mt-0">
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="main-price">
-                                    <a href="product-left-sidebar.html" class="font-default">
-                                        <h5>Military Ball Night Dress</h5>
-                                    </a>
-                                    <div class="listing-content">
-                                        <span class="font-light">Regular Fit</span>
-                                        <p class="font-light">Lorem ipsum, dolor sit amet consectetur adipisicing
-                                            elit. Sit, deserunt? Asperiores aliquam voluptatum culpa aliquid ab
-                                            ducimus eaque illum, quibusdam reiciendis id ad consectetur quis, animi
-                                            qui, minus quidem eveniet! Dolorum magnam numquam, asperiores
-                                            accusantium architecto placeat quam officia, tempore repellendus.</p>
-                                    </div>
-                                    <h3 class="theme-color">$85.00</h3>
-                                    <button onclick="location.href = 'cart.html';" class="btn listing-content">Add
-                                        To Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <div class="front">
-                                    <a href="product-left-sidebar.html">
-                                        <img src="client/assets/images/fashion/product/front/4.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="back">
-                                    <a href="product-left-sidebar.html">
-                                        <img src="client/assets/images/fashion/product/back/4.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="label-block">
-                                    <span class="label label-black">New</span>
-                                    <span class="label label-theme">50% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-bag"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="compare.html">
-                                                <i data-feather="refresh-cw"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.html" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <div class="rating-details">
-                                    <span class="font-light grid-content">Jacket</span>
-                                    <ul class="rating mt-0">
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="main-price">
-                                    <a href="product-left-sidebar.html" class="font-default">
-                                        <h5>Full Slive Yellow Jacket</h5>
-                                    </a>
-                                    <div class="listing-content">
-                                        <span class="font-light">Regular Fit</span>
-                                        <p class="font-light">Lorem ipsum, dolor sit amet consectetur adipisicing
-                                            elit. Sit, deserunt? Asperiores aliquam voluptatum culpa aliquid ab
-                                            ducimus eaque illum, quibusdam reiciendis id ad consectetur quis, animi
-                                            qui, minus quidem eveniet! Dolorum magnam numquam, asperiores
-                                            accusantium architecto placeat quam officia, tempore repellendus.</p>
-                                    </div>
-                                    <h3 class="theme-color">$69.00</h3>
-                                    <button onclick="location.href = 'cart.html';" class="btn listing-content">Add
-                                        To Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <div class="front">
-                                    <a href="product-left-sidebar.html">
-                                        <img src="client/assets/images/fashion/product/front/2.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="back">
-                                    <a href="product-left-sidebar.html">
-                                        <img src="client/assets/images/fashion/product/back/2.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="label-block">
-                                    <span class="label label-black">New</span>
-                                    <span class="label label-theme">50% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-bag"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="compare.html">
-                                                <i data-feather="refresh-cw"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.html" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-details">
-                                <div class="rating-details">
-                                    <span class="font-light grid-content">Jacket</span>
-                                    <ul class="rating mt-0">
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="main-price">
-                                    <a href="product-left-sidebar.html" class="font-default">
-                                        <h5>Blue Leather Jacket</h5>
-                                    </a>
-                                    <div class="listing-content">
-                                        <span class="font-light">Regular Fit</span>
-                                        <p class="font-light">Lorem ipsum, dolor sit amet consectetur adipisicing
-                                            elit. Sit, deserunt? Asperiores aliquam voluptatum culpa aliquid ab
-                                            ducimus eaque illum, quibusdam reiciendis id ad consectetur quis, animi
-                                            qui, minus quidem eveniet! Dolorum magnam numquam, asperiores
-                                            accusantium architecto placeat quam officia, tempore repellendus.</p>
-                                    </div>
-                                    <h3 class="theme-color">$60.00</h3>
-                                    <button onclick="location.href = 'cart.html';" class="btn listing-content">Add
-                                        To Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach ?>
                 </div>
             </div>
         </div>
@@ -960,11 +589,12 @@
                 <div class="category-wrapper category-slider1 white-arrow category-arrow">
                     <?php foreach ($categories as $category): ?>
                         <div>
-                            <a href="shop-left-sidebar.html" class="category-wrap category-padding">
-                                <img src="./images/category/<?=$category['image']?>" class="bg-img blur-up lazyload"
+                            <a href="index.php?act=detail-category&category_id=<?= $category['category_id'] ?>"
+                                class="category-wrap category-padding">
+                                <img src="./images/category/<?= $category['image'] ?>" class="bg-img blur-up lazyload"
                                     alt="category image">
                                 <div class="category-content category-text-1">
-                                    <h3 class="theme-color"><?=$category['name']?></h3>
+                                    <h3 class="theme-color"><?= $category['name'] ?></h3>
                                     <span class="text-dark">Fashion</span>
                                 </div>
                             </a>
@@ -989,23 +619,27 @@
             </div>
         </div>
         <div class="row gy-4">
+            <!-- new product -->
             <div class="col-lg-6 ratio2_1">
                 <div class="collection-banner p-right text-right">
                     <a href="shop-left-sidebar.html" class="banner-img">
-                        <img src="client/assets/images/fashion/banner/4.jpg" class="bg-img blur-up lazyload" alt="">
+                        <img src="./images/product/<?= $newProduct['image'] ?>" class="bg-img blur-up lazyload" alt="">
                     </a>
                     <div class="banner-text">
                         <div class="banner-content">
-                            <span class="span-top">New <span class="theme-color">Collections</span></span>
-                            <h2> New Red Jackets from <span class="theme-color">$48</span></h2>
+                            <h1 class="span-top"> <span class="theme-color"><?= $newProduct['brand_name'] ?></span></h1>
+                            <h3 class="fw-bold"> <?= $newProduct['name'] ?></h3>
                             <button onclick="location.href = 'shop-left-sidebar.html';" type="button"
                                 class="btn btn-solid-default">Shop Now</button>
-
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- end new product -->
+
+
             <div class="col-lg-6">
+
                 <div class="row gy-4">
                     <div class="col-lg-12 ratio_40">
                         <div class="collection-banner p-left banner-title">
@@ -1022,6 +656,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-sm-6 ratio2_3">
                         <div class="collection-banner p-center text-center">
                             <a href="shop-left-sidebar.html" class="banner-img">
@@ -1036,6 +671,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div class="col-sm-6 ratio2_3">
                         <div class="collection-banner p-center text-center">
                             <a href="shop-left-sidebar.html" class="banner-img">
@@ -1050,8 +686,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </div>
@@ -1769,8 +1405,8 @@
                             </div>
 
                             <h5 class="mt-3">Special Discount <span class="theme-color">70% OFF</span></h5>
-                            <h2 class="my-3 deal-text">Deal Of The Day <br>from <span class="theme-color">$75</span>
-                            </h2>
+                            <h1 class="my-3 text-dark fw-bold theme-color ">Deal Of The Day</h1>
+
                             <div class="timer-style-2 mt-xl-1 my-2 justify-content-center d-flex">
                                 <ul>
                                     <li>
@@ -1806,11 +1442,6 @@
                             <button onclick="location.href = 'shop-left-sidebar.html';" type="button"
                                 class="btn default-light-theme default-theme mt-2">Shop
                                 Now</button>
-
-                            <div class="timer-bg timer-bg-center d-lg-block d-none">
-                                <h3 class="mt-0">Latest Jacket</h3>
-                                <span>BUY ONE GET ONE FREE</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1826,155 +1457,41 @@
         <div class="row">
             <div class="col">
                 <div class="title title-2 text-center">
-                    <h2>Instagram Shop</h2>
+                    <h2>Brands</h2>
                     <h5 class="text-color">New Collection</h5>
                 </div>
                 <div class="product-style-1 instagram-2 product-wrapper">
                     <div class="insta-slider instagram-wrap">
-                        <div>
-                            <div class="product-box">
-                                <div class="img-wrapper">
-                                    <div class="top-wishlist product-color">
-                                        <a href="wishlist.html" class="heart-wishlist heart-color ms-auto">
-                                            <i class="far fa-heart"></i>
+                        <?php foreach ($brands as $brand): ?>
+                            <div>
+                                <div class="product-box">
+                                    <div class="img-wrapper">
+                                        <div class="top-wishlist product-color">
+                                            <a href="wishlist.html" class="heart-wishlist heart-color ms-auto">
+                                                <i class="far fa-heart"></i>
+                                            </a>
+                                        </div>
+                                        <div class="share share-box share-opacity">
+                                            <span class="share-plus share-plus-color">+</span>
+                                            <span>Share</span>
+                                        </div>
+                                        <a href="javascript:void(0)" class="text-center">
+                                            <img src="./images/brand/<?= $brand['logo'] ?>" class="bg-img blur-up lazyload"
+                                                alt="">
                                         </a>
                                     </div>
-                                    <div class="share share-box share-opacity">
-                                        <span class="share-plus share-plus-color">+</span>
-                                        <span>Share</span>
-                                    </div>
-                                    <a href="javascript:void(0)" class="text-center">
-                                        <img src="client/assets/images/fashion/instagram/1.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="insta-hover insta-spacing text-center">
-                                    <div>
-                                        <h5>New Offer -56% Discount</h5>
-                                        <h3 class="text-hide">Women T-shirt From $35</h3>
-                                        <button onclick="location.href = 'shop-left-sidebar.html';" type="button"
-                                            class="btn btn-light-white">Shop now <i
-                                                class="fas fa-chevron-right ms-2"></i></button>
+                                    <div class="insta-hover insta-spacing text-center">
+                                        <div>
+                                            <h5>New Offer -56% Discount</h5>
+                                            <h3 class="text-hide"><?=$brand['name']?></h3>
+                                            <button onclick="location.href = 'shop-left-sidebar.html';" type="button"
+                                                class="btn btn-light-white">Shop now <i
+                                                    class="fas fa-chevron-right ms-2"></i></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div>
-                            <div class="product-box">
-                                <div class="img-wrapper">
-                                    <div class="top-wishlist product-color">
-                                        <a href="wishlist.html" class="heart-wishlist heart-color ms-auto">
-                                            <i class="far fa-heart"></i>
-                                        </a>
-                                    </div>
-                                    <div class="share share-box share-opacity">
-                                        <span class="share-plus share-plus-color">+</span>
-                                        <span>Share</span>
-                                    </div>
-                                    <a href="javascript:void(0)" class="text-center">
-                                        <img src="client/assets/images/fashion/instagram/2.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="insta-hover insta-spacing text-center">
-                                    <div>
-                                        <h5>New Offer -56% Discount</h5>
-                                        <h3 class="text-hide">Women T-shirt From $35</h3>
-                                        <button onclick="location.href = 'shop-left-sidebar.html';" type="button"
-                                            class="btn btn-light-white">Shop now <i
-                                                class="fas fa-chevron-right ms-2"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="product-box">
-                                <div class="img-wrapper">
-                                    <div class="top-wishlist product-color">
-                                        <a href="wishlist.html" class="heart-wishlist heart-color ms-auto">
-                                            <i class="far fa-heart"></i>
-                                        </a>
-                                    </div>
-                                    <div class="share share-box share-opacity">
-                                        <span class="share-plus share-plus-color">+</span>
-                                        <span>Share</span>
-                                    </div>
-                                    <a href="javascript:void(0)" class="text-center">
-                                        <img src="client/assets/images/fashion/instagram/3.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="insta-hover insta-spacing text-center">
-                                    <div>
-                                        <h5>New Offer -56% Discount</h5>
-                                        <h3 class="text-hide">Women T-shirt From $35</h3>
-                                        <button onclick="location.href = 'shop-left-sidebar.html';" type="button"
-                                            class="btn btn-light-white">Shop now <i
-                                                class="fas fa-chevron-right ms-2"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="product-box">
-                                <div class="img-wrapper">
-                                    <div class="top-wishlist product-color">
-                                        <a href="wishlist.html" class="heart-wishlist heart-color ms-auto">
-                                            <i class="far fa-heart"></i>
-                                        </a>
-                                    </div>
-                                    <div class="share share-box share-opacity">
-                                        <span class="share-plus share-plus-color">+</span>
-                                        <span>Share</span>
-                                    </div>
-                                    <a href="javascript:void(0)" class="text-center">
-                                        <img src="client/assets/images/fashion/instagram/4.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="insta-hover insta-spacing text-center">
-                                    <div>
-                                        <h5>New Offer -56% Discount</h5>
-                                        <h3 class="text-hide">Women T-shirt From $35</h3>
-                                        <button onclick="location.href = 'shop-left-sidebar.html';" type="button"
-                                            class="btn btn-light-white">Shop now <i
-                                                class="fas fa-chevron-right ms-2"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="product-box">
-                                <div class="img-wrapper">
-                                    <div class="top-wishlist product-color">
-                                        <a href="wishlist.html" class="heart-wishlist heart-color ms-auto">
-                                            <i class="far fa-heart"></i>
-                                        </a>
-                                    </div>
-                                    <div class="share share-box share-opacity">
-                                        <span class="share-plus share-plus-color">+</span>
-                                        <span>Share</span>
-                                    </div>
-                                    <a href="javascript:void(0)" class="text-center">
-                                        <img src="client/assets/images/fashion/instagram/5.jpg"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
-                                </div>
-                                <div class="insta-hover insta-spacing text-center">
-                                    <div>
-                                        <h5>New Offer -56% Discount</h5>
-                                        <h3 class="text-hide">Women T-shirt From $35</h3>
-                                        <button onclick="location.href = 'shop-left-sidebar.html';" type="button"
-                                            class="btn btn-light-white">Shop now <i
-                                                class="fas fa-chevron-right ms-2"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
             </div>

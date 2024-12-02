@@ -212,6 +212,24 @@ class ProductsAdminModle extends Connect
         return $stmt->execute([$gallery_image, $product_id]);
     }
 
+    public function getNewProduct()
+    {
+        $sql = "
+        SELECT 
+            p.*, 
+            c.name AS category_name, 
+            b.name AS brand_name 
+        FROM 
+            products p
+        LEFT JOIN category c ON p.category_id = c.category_id
+        LEFT JOIN brands b ON p.brand_id = b.brand_id
+        ORDER BY p.created_at DESC 
+        LIMIT 2";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
 
 
 

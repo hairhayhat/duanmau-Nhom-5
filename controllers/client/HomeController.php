@@ -17,7 +17,9 @@ class HomeController
     public function index()
     {
         $categories = $this->category->listCategoriesAdmin();
-        $product = $this->product->listProducts();
+        $products = $this->product->listProducts();
+        $brands = $this->brand->getLimitBrand();
+        $newProduct = $this->product->getNewProduct();
         include '../views/client/index.php';
     }
     public function header()
