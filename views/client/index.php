@@ -19,7 +19,7 @@
                 <span>Cart</span>
             </a>
         </li>
-        <li>
+        <li>`
             <a href="wishlist.html">
                 <i data-feather="heart"></i>
                 <span>Wishlist</span>
