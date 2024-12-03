@@ -539,7 +539,7 @@
                                     <span class="font-light grid-content"><?= $product['brand_name'] ?></span>
                                 </div>
                                 <div class="main-price">
-                                    <a href="product-left-sidebar.html" class="font-default">
+                                    <a href="?act=detail-product" class="font-default">
                                         <h5>Slim Fit Plastic Coat</h5>
                                     </a>
                                     <div class="listing-content">
@@ -551,7 +551,7 @@
                                             accusantium architecto placeat quam officia, tempore repellendus.</p>
                                     </div>
                                     <h3 class="theme-color">$78.00</h3>
-                                    <button onclick="location.href = 'cart.html';" class="btn listing-content">Add
+                                    <button onclick="location.href = '?act=detail-product';" class="btn listing-content">Add
                                         To Cart</button>
                                 </div>
                             </div>

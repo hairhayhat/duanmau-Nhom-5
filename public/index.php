@@ -13,6 +13,7 @@ require_once '../controllers/client/favoritesController.php';
 
 
 
+
 $action = isset($_GET['act']) ? $_GET['act'] : 'client';
 
 $categoryAdmin = new CategoryAdminController();
@@ -27,6 +28,7 @@ switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
         break;
+    
 
     //client
     case 'client':
@@ -39,6 +41,7 @@ switch ($action) {
     case 'detail-product':
         $home->detailProduct();
         break;
+    
 
     // thêm sản phẩm yêu thích
     case 'add-favorite-product':
@@ -100,12 +103,12 @@ switch ($action) {
 
     //hóa đơn
     case 'cart':
-        include '../models/client/CartModels.php';
+        include '../views/client/cart.php';
         break;
-    case 'addToCart-byNow':
-        $cart->addtoCartOrByNow();
-
-
+    case 'add_to_cart':
+        $cart->addtoCart($_SESSION['user']['user_id'],$_POST['product_id'],$_POST['variant_id'],$_POST['quantity']);
+        break;
+    
     //đăng nhập đăng xuất
     case 'login':
         $auth->signin();
