@@ -144,20 +144,23 @@ if (session_status() == PHP_SESSION_NONE) {
                                 </div>
                             </nav>
                             <div class="menu-right">
-                                <ul>
-                                    <li>
-                                        <div class="search-box">
-                                            <i data-feather="search"></i>
-                                        </div>
-                                    </li>
-                                    <li class="onhover-dropdown">
-                                        <div class="cart-media">
-                                            <i data-feather="user"></i>
-                                        </div>
-                                        <div class="onhover-div profile-dropdown">
-                                            <ul>
-                                                <?php if (isset($_SESSION['user'])): ?>
-                                                    <?php $user = $_SESSION['user']; ?>
+                                <?php if (isset($_SESSION['user'])): ?>
+                                    <?php $user = $_SESSION['user']; ?>
+                                    <ul>
+                                        <li>
+                                            <div class="search-box">
+                                                <i data-feather="search"></i>
+                                            </div>
+                                        </li>
+                                        <li class="onhover-dropdown">
+                                            <div class="cart-media">
+                                                <img class="user-profile rounded-circle"
+                                                    src="./images/avatar/<?= $user['avatar'] ?>" alt="N/A"
+                                                    style="width: 45px; height: 45px;">
+                                            </div>
+                                            <div class="onhover-div profile-dropdown">
+                                                <ul>
+
                                                     <li>
                                                         <a href="index.php?act=profile.php"
                                                             class="d-block"><?= $user['name'] ?></a>

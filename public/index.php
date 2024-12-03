@@ -28,7 +28,7 @@ switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
         break;
-    
+
 
     //client
     case 'client':
@@ -41,7 +41,7 @@ switch ($action) {
     case 'detail-product':
         $home->detailProduct();
         break;
-    
+
 
     // thêm sản phẩm yêu thích
     case 'add-favorite-product':
@@ -106,9 +106,9 @@ switch ($action) {
         include '../views/client/cart.php';
         break;
     case 'add_to_cart':
-        $cart->addtoCart($_SESSION['user']['user_id'],$_POST['product_id'],$_POST['variant_id'],$_POST['quantity']);
+        $cart->addtoCart($_SESSION['user']['user_id'], $_POST['product_id'], $_POST['variant_id'], $_POST['quantity']);
         break;
-    
+
     //đăng nhập đăng xuất
     case 'login':
         $auth->signin();

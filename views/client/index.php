@@ -526,8 +526,10 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="index.php?act=add-favorite-product&product_id=<?= $product['product_id'] ?>">
-                                                <i data-feather="heart"></i>
+                                            <a
+                                                href="index.php?act=add-favorite-product&product_id=<?= $product['product_id'] ?>">
+                                                <i data-feather="heart"
+                                                    style="color: <?= ($product['favorite_user_id'] == $user['user_id']) ? 'red' : 'black'; ?>"></i>
                                             </a>
                                         </li>
                                     </ul>

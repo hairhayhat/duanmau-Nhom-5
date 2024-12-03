@@ -9,7 +9,8 @@ class FavoritesController extends FavoritesModels
             $user_id = $_SESSION['user']['user_id'];
             $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : null;
 
-            if ($product_id) {
+            $isFavorite = $this->isProductInFavorites($product_id, $user_id);
+            if (!$isFavorite) {
                 $result = $this->addFavoritesProduct($user_id, $product_id);
 
                 if ($result) {
@@ -18,7 +19,12 @@ class FavoritesController extends FavoritesModels
                     $_SESSION['error'] = 'Đã xảy ra lỗi khi thêm sản phẩm vào danh sách yêu thích.';
                 }
             } else {
-                $_SESSION['error'] = 'Sản phẩm không hợp lệ.';
+                $result = $this->removeFavorite($user_id, $product_id);
+                if ($result) {
+                    $_SESSION['success'] = 'Đã xóa sản phẩm khỏi danh sách yêu thích!';
+                } else {
+                    $_SESSION['error'] = 'Đã xảy ra lỗi khi xóa sản phẩm khỏi danh sách yêu thích.';
+                }
             }
 
             header('Location: ' . $_SERVER['HTTP_REFERER']);
