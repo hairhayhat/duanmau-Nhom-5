@@ -492,46 +492,38 @@
                 </div>
                 <div class="product-wrapper product-style-2 slide-4 p-0 light-arrow bottom-space">
                     <?php foreach ($products as $product): ?>
-                        <div class="product-box">
-                            <div class="img-wrapper">
+                        <div class="product-box ">
+                            <div class="img-wrapper border rounded-lg p-3">
                                 <div class="front">
-                                    <a href="product-left-sidebar.html">
-                                        <img src="./images/product/<?= $product['product_image'] ?>"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
+                                    <img src="./images/product/<?= $product['product_image'] ?>"
+                                        class="bg-img blur-up lazyload" alt="">
                                 </div>
                                 <div class="back">
-                                    <a href="product-left-sidebar.html">
-                                        <img src="./images/product/<?= $product['product_image'] ?>"
-                                            class="bg-img blur-up lazyload" alt="">
-                                    </a>
+                                    <img src="./images/product/<?= $product['product_image'] ?>"
+                                        class="bg-img blur-up lazyload" alt="">
                                 </div>
                                 <div class="cart-wrap">
                                     <ul>
                                         <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-bag"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
+                                            <a href="index.php?act=detail-product&product_id=<?= $product['product_id'] ?>">
                                                 <i data-feather="eye"></i>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="compare.html">
-                                                <i data-feather="refresh-cw"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="index.php?act=add-favorite-product&product_id=<?= $product['product_id'] ?>">
-                                                <i data-feather="heart"
-                                                    style="color: <?= ($product['favorite_user_id'] == $user['user_id']) ? 'red' : 'black'; ?>"></i>
-                                            </a>
-                                        </li>
+                                        <?php if (isset($_SESSION['user'])): ?>
+                                            <li>
+                                                <a
+                                                    href="index.php?act=add-favorite-product&product_id=<?= $product['product_id'] ?>">
+                                                    <i data-feather="heart"
+                                                        style="color: <?= ($product['favorite_user_id'] == $user['user_id']) ? 'red' : 'black'; ?>"></i>
+                                                </a>
+                                            </li>
+                                        <?php else: ?>
+                                            <li>
+                                                <a href="index.php?act=add-favorite-product" class="wishlist">
+                                                    <i data-feather="heart"></i>
+                                                </a>
+                                            </li>
+                                        <?php endif ?>
                                     </ul>
                                 </div>
                             </div>
@@ -541,7 +533,8 @@
                                     <span class="font-light grid-content"><?= $product['brand_name'] ?></span>
                                 </div>
                                 <div class="main-price">
-                                    <a href="?act=detail-product&product_id=<?= $product['product_id'] ?>" class="font-default">
+                                    <a href="?act=detail-product&product_id=<?= $product['product_id'] ?>"
+                                        class="font-default">
                                         <h5>Slim Fit Plastic Coat</h5>
                                     </a>
                                     <div class="listing-content">
@@ -552,7 +545,7 @@
                                             qui, minus quidem eveniet! Dolorum magnam numquam, asperiores
                                             accusantium architecto placeat quam officia, tempore repellendus.</p>
                                     </div>
-                                    <h3 class="theme-color">$78.00</h3>
+                                    <h3 class="theme-color"><?= $product['product_price'] ?>.000đ</h3>
                                     <button onclick="location.href = '?';" class="btn listing-content">Add
                                         To Cart</button>
                                 </div>
@@ -1564,4 +1557,121 @@
         </div>
     </div>
 </section>
+
+<!-- <div class="modal fade quick-view-modal" id="quick-view">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <div class="quick-view-image">
+                            <div class="quick-view-slider ratio_2">
+                                <div>
+                                    <img src="client/assets/images/fashion/product/front/4.jpg"
+                                        class="img-fluid bg-img blur-up lazyload" alt="product">
+                                </div>
+                                <div>
+                                    <img src="client/assets/images/fashion/product/front/5.jpg"
+                                        class="img-fluid bg-img blur-up lazyload" alt="product">
+                                </div>
+                                <div>
+                                    <img src="client/assets/images/fashion/product/front/6.jpg"
+                                        class="img-fluid bg-img blur-up lazyload" alt="product">
+                                </div>
+                                <div>
+                                    <img src="client/assets/images/fashion/product/front/7.jpg"
+                                        class="img-fluid bg-img blur-up lazyload" alt="product">
+                                </div>
+                            </div>
+                            <div class="quick-nav">
+                                <div>
+                                    <img src="client/assets/images/fashion/product/front/4.jpg"
+                                        class="img-fluid blur-up lazyload" alt="product">
+                                </div>
+                                <div>
+                                    <img src="client/assets/images/fashion/product/front/5.jpg"
+                                        class="img-fluid blur-up lazyload" alt="product">
+                                </div>
+                                <div>
+                                    <img src="client/assets/images/fashion/product/front/6.jpg"
+                                        class="img-fluid blur-up lazyload" alt="product">
+                                </div>
+                                <div>
+                                    <img src="client/assets/images/fashion/product/front/7.jpg"
+                                        class="img-fluid blur-up lazyload" alt="product">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="product-right">
+                            <h2 class="mb-2"></h2>
+
+
+                            <ul class="rating mt-1">
+                                <li>
+                                    <i class="fas fa-star theme-color"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star theme-color"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star theme-color"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star"></i>
+                                </li>
+                                <li class="font-light">(In stock)</li>
+                            </ul>
+                            <div class="price mt-3">
+                                <h3>$20.00</h3>
+                            </div>
+                            <div class="color-types">
+                                <h4>colors</h4>
+                                <ul class="color-variant mb-0">
+                                    <li class="bg-half-light selected"></li>
+                                    <li class="bg-light1"></li>
+                                    <li class="bg-blue1"></li>
+                                    <li class="bg-black1"></li>
+                                </ul>
+                            </div>
+                            <div class="size-detail">
+                                <h4>size</h4>
+                                <ul class="">
+                                    <li class="selected">S</li>
+                                    <li>M</li>
+                                    <li>L</li>
+                                    <li>XL</li>
+                                </ul>
+                            </div>
+                            <div class="product-details">
+                                <h4>product details</h4>
+                                <ul>
+                                    <li>
+                                        <span class="font-light">Style :</span> Hoodie
+                                    </li>
+                                    <li>
+                                        <span class="font-light">Catgory :</span> T-shirt
+                                    </li>
+                                    <li>
+                                        <span class="font-light">Tags:</span> summer, organic
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product-btns">
+                                <a href="cart.html" class="btn btn-solid-default btn-sm">Add to cart</a>
+                                <a href="product-left-sidebar.html" class="btn btn-solid-default btn-sm">View
+                                    details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
 <?php include '../views/client/layout/footer.php' ?>

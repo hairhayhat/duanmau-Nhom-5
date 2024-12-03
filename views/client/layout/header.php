@@ -144,113 +144,165 @@ if (session_status() == PHP_SESSION_NONE) {
                                 </div>
                             </nav>
                             <div class="menu-right">
-                                <?php if (isset($_SESSION['user'])): ?>
-                                    <?php $user = $_SESSION['user']; ?>
-                                    <ul>
-                                        <li>
-                                            <div class="search-box">
-                                                <i data-feather="search"></i>
-                                            </div>
-                                        </li>
+                                <ul>
+                                    <li>
+                                        <div class="search-box">
+                                            <i data-feather="search"></i>
+                                        </div>
+                                    </li>
+                                    <?php if (isset($_SESSION['user'])): ?>
+                                        <?php $user = $_SESSION['user']; ?>
                                         <li class="onhover-dropdown">
                                             <div class="cart-media">
-                                                <img class="user-profile rounded-circle"
-                                                    src="./images/avatar/<?= $user['avatar'] ?>" alt="N/A"
+                                                <img src="./images/avatar/<?= $user['avatar'] ?>" alt="N/A"
                                                     style="width: 45px; height: 45px;">
                                             </div>
                                             <div class="onhover-div profile-dropdown">
                                                 <ul>
-
                                                     <li>
-                                                        <a href="index.php?act=profile.php"
+                                                        <a href="?act=update-profile"
                                                             class="d-block"><?= $user['name'] ?></a>
                                                     </li>
                                                     <li>
-                                                        <a href="index.php?act=update-profile" class="d-block">Update
-                                                            profile</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index.php?act=logout" class="d-block">Logout</a>
-                                                    </li>
-                                                <?php else: ?>
-                                                    <li>
-                                                        <a href="index.php?act=login" class="d-block">Login</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index.php?act=register" class="d-block">Register</a>
-                                                    </li>
-                                                <?php endif; ?>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li class="onhover-dropdown wislist-dropdown">
-                                        <div class="cart-media">
-                                            <a href="wishlist.html">
-                                                <i data-feather="heart"></i>
-                                                <span class="label label-theme rounded-pill">5</span>
-                                            </a>
-                                        </div>
-                                        <div class="onhover-div">
-                                            <a href="wishlist.html">
-                                                <div class="wislist-empty">
-                                                    <i class="fab fa-gratipay"></i>
-                                                    <h6 class="mb-1">Your wislist empty !!</h6>
-                                                    <p class="font-light mb-0">explore more and shortlist items.
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="onhover-dropdown cart-dropdown">
-                                        <button type="button" class="btn btn-solid-default btn-spacing">
-                                            <i data-feather="shopping-cart" class="pe-2"></i>
-                                            <span>$5686.25</span>
-                                        </button>
-                                        <div class="onhover-div">
-                                            <div class="cart-menu">
-                                                <div class="cart-title">
-                                                    <h6>
-                                                        <i data-feather="shopping-bag"></i>
-                                                        <span class="label label-theme rounded-pill">5</span>
-                                                    </h6>
-                                                    <span class="d-md-none d-block">
-                                                        <i class="fas fa-arrow-right back-cart"></i>
-                                                    </span>
-                                                </div>
-                                                <ul class="custom-scroll">
-                                                    <li>
-                                                        <div class="media">
-                                                            <img src="client/assets/images/fashion/product/front/1.jpg"
-                                                                class="img-fluid blur-up lazyload" alt="">
-                                                            <div class="media-body">
-                                                                <h6>Slim Fit Plastic Coat</h6>
-                                                                <div class="qty-with-price">
-                                                                    <span>$78.00</span>
-                                                                    <span>
-                                                                        <input type="number" class="form-control"
-                                                                            value="1">
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <button type="button" class="btn-close d-block d-md-none"
-                                                                aria-label="Close">
-                                                                <i class="fas fa-times"></i>
-                                                            </button>
-                                                        </div>
+                                                        <a href="?act=logout" class="d-block">Log-out</a>
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="cart-btn">
-                                                <h6 class="cart-total"><span class="font-light">Total:</span> $
-                                                    542.00</h6>
-                                                <button onclick="location.href = '?act=cart';" type="button"
-                                                    class="btn btn-solid-default btn-block">
-                                                    Proceed to payment
-                                                </button>
+                                        </li>
+                                        <li class="onhover-dropdown wislist-dropdown">
+                                            <div class="cart-media">
+                                                <a href="wishlist.html">
+                                                    <i data-feather="heart"></i>
+                                                    <span class="label label-theme rounded-pill">5</span>
+                                                </a>
                                             </div>
-                                        </div>
-                                    </li>
+                                            <div class="onhover-div">
+                                                <a href="wishlist.html">
+                                                    <div class="wislist-empty">
+                                                        <i class="fab fa-gratipay"></i>
+                                                        <h6 class="mb-1">Chưa có sản phẩm yêu thích</h6>
+                                                        <p class="font-light mb-0">LỰA NGAY!!!</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="onhover-dropdown cart-dropdown">
+                                            <button type="button" class="btn btn-solid-default btn-spacing">
+                                                <i data-feather="shopping-cart" class="pe-2"></i>
+                                                <span>$5686.25</span>
+                                            </button>
+                                            <div class="onhover-div">
+                                                <div class="cart-menu">
+
+                                                    <?php foreach ($carts as $cart): ?>
+                                                        <ul class="custom-scroll">
+                                                            <li>
+                                                                <div class="media">
+                                                                    <img src="assets/images/fashion/product/front/7.jpg"
+                                                                        class="img-fluid blur-up lazyload" alt="">
+                                                                    <div class="media-body">
+                                                                        <h6>Womens Stylish Jacket</h6>
+                                                                        <div class="qty-with-price">
+                                                                            <span>$24.00</span>
+                                                                            <span>
+                                                                                <input type="number" class="form-control"
+                                                                                    value="1">
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <button type="button" class="btn-close d-block d-md-none"
+                                                                        aria-label="Close">
+                                                                        <i class="fas fa-times"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    <?php endforeach; ?>
+                                                </div>
+                                                <div class="cart-btn">
+                                                    <h6 class="cart-total"><span class="font-light">Total:</span> $
+                                                        542.00</h6>
+                                                    <button onclick="location.href = 'cart.html';" type="button"
+                                                        class="btn btn-solid-default btn-block">
+                                                        Proceed to payment
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php else: ?>
+                                        <li class="onhover-dropdown">
+                                            <div class="cart-media">
+                                                <i data-feather="user"></i>
+                                            </div>
+                                            <div class="onhover-div profile-dropdown">
+                                                <ul>
+                                                    <li>
+                                                        <a href="?act=login" class="d-block">Login</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="?act=logout" class="d-block">Create account</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="onhover-dropdown wislist-dropdown">
+                                            <div class="cart-media">
+                                                <a href="wishlist.html">
+                                                    <i data-feather="heart"></i>
+                                                    <span class="label label-theme rounded-pill">5</span>
+                                                </a>
+                                            </div>
+                                            <div class="onhover-div">
+                                                <a href="wishlist.html">
+                                                    <div class="wislist-empty">
+                                                        <i class="fab fa-gratipay"></i>
+                                                        <h6 class="mb-1">error</h6>
+                                                        <p class="font-light mb-0">Bạn cần đăng nhập trước</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="onhover-dropdown cart-dropdown">
+                                            <button type="button" class="btn btn-solid-default btn-spacing">
+                                                <i data-feather="shopping-cart" class="pe-2"></i>
+                                                <span>$5686.25</span>
+                                            </button>
+                                            <div class="onhover-div">
+                                                <div class="cart-menu">
+                                                    <ul class="custom-scroll">
+                                                        <li>
+                                                            <div class="media">
+                                                                <img src="assets/images/fashion/product/front/7.jpg"
+                                                                    class="img-fluid blur-up lazyload" alt="">
+                                                                <div class="media-body">
+                                                                    <h6>Womens Stylish Jacket</h6>
+                                                                    <div class="qty-with-price">
+                                                                        <span>$24.00</span>
+                                                                        <span>
+                                                                            <input type="number" class="form-control"
+                                                                                value="1">
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="button" class="btn-close d-block d-md-none"
+                                                                    aria-label="Close">
+                                                                    <i class="fas fa-times"></i>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="cart-btn">
+                                                    <h6 class="cart-total"><span class="font-light">Total:</span> $
+                                                        542.00</h6>
+                                                    <button onclick="location.href = 'cart.html';" type="button"
+                                                        class="btn btn-solid-default btn-block">
+                                                        Proceed to payment
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                             <div class="search-full">

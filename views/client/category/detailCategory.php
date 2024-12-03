@@ -232,8 +232,8 @@
                     class="row g-sm-4 g-3 row-cols-lg-4 row-cols-md-3 row-cols-2 mt-1 custom-gy-5 product-style-2 ratio_asos product-list-section">
                     <?php foreach ($productByCate as $product): ?>
                         <div>
-                            <div class="product-box">
-                                <div class="img-wrapper">
+                            <div class="product-box ">
+                                <div class="img-wrapper border rounded-lg p-3">
                                     <div class="front">
                                         <a href="product-left-sidebar.html">
                                             <img src="./images/product/<?= $product['image'] ?>"
@@ -249,29 +249,26 @@
                                     <div class="cart-wrap">
                                         <ul>
                                             <li>
-                                                <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                    data-bs-target="#addtocart">
-                                                    <i data-feather="shopping-bag"></i>
-                                                </a>
-                                            </li>
-                                            <li>
                                                 <a
                                                     href="index.php?act=detail-product&product_id=<?= $product['product_id'] ?>">
                                                     <i data-feather="eye"></i>
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="compare.html">
-                                                    <i data-feather="refresh-cw"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="index.php?act=add-favorite-product&product_id=<?= $product['product_id'] ?>"
-                                                    class="wishlist">
-                                                    <i data-feather="heart"
-                                                        style="color: <?= ($product['favorite_user_id'] == $user['user_id']) ? 'red' : 'black'; ?>"></i>
-                                                </a>
-                                            </li>
+                                            <?php if (isset($_SESSION['user'])): ?>
+                                                <li>
+                                                    <a
+                                                        href="index.php?act=add-favorite-product&product_id=<?= $product['product_id'] ?>">
+                                                        <i data-feather="heart"
+                                                            style="color: <?= ($product['favorite_user_id'] == $user['user_id']) ? 'red' : 'black'; ?>"></i>
+                                                    </a>
+                                                </li>
+                                            <?php else: ?>
+                                                <li>
+                                                    <a href="index.php?act=add-favorite-product" class="wishlist">
+                                                        <i data-feather="heart"></i>
+                                                    </a>
+                                                </li>
+                                            <?php endif ?>
                                         </ul>
                                     </div>
                                 </div>
@@ -293,7 +290,7 @@
                                                 eveniet! Dolorum magnam numquam, asperiores accusantium architecto placeat
                                                 quam officia, tempore repellendus.</p>
                                         </div>
-                                        <h3 class="theme-color"><?= $product['price'] ?>.000 Vnđ</h3>
+                                        <h3 class="theme-color"><?= $product['price'] ?>.000đ</h3>
                                         <button onclick="location.href = 'cart.html';" class="btn listing-content">Add To
                                             Cart</button>
                                     </div>

@@ -7,7 +7,7 @@
                 <div class="logo-wrapper logo-wrapper-center">
                     <a href="index.php?act=admin" data-bs-original-title="" title="">
                         <h2 class="for-dark blur-up lazyload"><strong>Chào </strong></h2>
-                        <h4 class="gradient-title"><?=$user['name']?></h4>
+                        <h4 class="gradient-title"><?= $user['name'] ?></h4>
                         </>
                         <div class="back-btn">
                             <i class="fa fa-angle-left"></i>
@@ -58,7 +58,7 @@
                             </li>
 
                             <li class="">
-                                <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                                <a class="sidebar-link sidebar-title" href="?act=cart">
                                     <i data-feather="shopping-cart"></i>
                                     <span>Giỏ Hàng</span>
                                 </a>

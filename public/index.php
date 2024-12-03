@@ -103,7 +103,7 @@ switch ($action) {
         $coupon->delete();
         break;
 
-    //hóa đơn
+    //giỏ hàng
     case 'cart':
         $cart->index();
         break;

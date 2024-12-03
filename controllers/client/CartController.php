@@ -4,9 +4,14 @@ require_once '../models/client/Cart.php';
 class CartController extends Cart
 {
 
-    public function index(){
+    public function index()
+    {
         $carts = $this->getAllCart();
-        include '../views/client/cart/cart.php';
+        include '../views/client/profile/cart.php';
+    }
+
+    public function getCartbyUser(){
+        
     }
     public function addToCartOrBuyNow(): void
     {
@@ -58,27 +63,27 @@ class CartController extends Cart
     public function update()
     {
         if (isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_POST['update_cart'])) {
-            if(isset($_POST['quantity'])){
-                foreach($_POST['quantity'] as $cart_id => $quantity){
+            if (isset($_POST['quantity'])) {
+                foreach ($_POST['quantity'] as $cart_id => $quantity) {
                     $this->updateCartById($cart_id, $quantity);
                 }
                 header('Location: ' . $_SERVER['HTTP_REFERER']);
                 $_SESSION['success'] = 'Cập nhật giỏ hàng thành công';
                 exit();
             }
+        }
     }
-}
-public function delete()
+    public function delete()
     {
         try {
             $this->deleteCart($_GET['cart_id']);
             $_SESSION['success'] = 'Xóa sản phẩm trong giỏ hàng thành công';
             header('Location: ' . $_SERVER['HTTP_REFERER']);
             exit();
-    }catch (\Throwable $th) {
-        $_SESSION['error'] = 'Xóa sản phẩm trong giỏ hàng thất bại';
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
-        exit();
+        } catch (\Throwable $th) {
+            $_SESSION['error'] = 'Xóa sản phẩm trong giỏ hàng thất bại';
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit();
+        }
     }
-}
 }
