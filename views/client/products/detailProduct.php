@@ -160,7 +160,7 @@
                                     <del><?= $detailProduct[0]['product_price'] ?>.000 Vnd</del><span>55% off</span>
                                 </h3>
 
-                                <form action="path/to/your/cart/action" method="POST">
+                                <form  action="?act=add_to_cart" method="POST">
                                     <div class="color-image">
                                         <div class="image-select">
                                             <h5 class="product-title product-title-2 d-block">Color :</h5>
@@ -203,13 +203,14 @@
 
                                     <input type="hidden" name="product_id"
                                         value="<?= $detailProduct[0]['product_id']; ?>">
+                                        
 
                                     <div class="product-buttons">
                                         <a href="wishlist.html" class="btn btn-solid">
                                             <i class="fa fa-bookmark fz-16 me-2"></i>
                                             <span>Wishlist</span>
                                         </a>
-                                        <button type="submit" class="btn btn-solid hover-solid btn-animation">
+                                        <button type="submit" name="add_to_cart" class="btn btn-solid hover-solid btn-animation">
                                             <i class="fa fa-shopping-cart"></i>
                                             <span>Add To Cart</span>
                                         </button>

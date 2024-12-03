@@ -96,13 +96,12 @@ switch ($action) {
 
     //hóa đơn
     case 'cart':
-        $cart->index();
+        include '../views/client/cart.php';
         break;
-    case 'addToCart-byNow':
-        $cart->addtoCartOrByNow();
+    case 'add_to_cart':
+        $cart->addtoCart($_SESSION['user']['user_id'],$_POST['product_id'],$_POST['variant_id'],$_POST['quantity']);
         break;
-
-
+    
     //đăng nhập đăng xuất
     case 'login':
         $auth->signin();
