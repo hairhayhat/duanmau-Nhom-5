@@ -526,7 +526,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="wishlist.html" class="wishlist">
+                                            <a href="index.php?act=add-favorite-product&product_id=<?= $product['product_id'] ?>">
                                                 <i data-feather="heart"></i>
                                             </a>
                                         </li>
@@ -1483,7 +1483,7 @@
                                     <div class="insta-hover insta-spacing text-center">
                                         <div>
                                             <h5>New Offer -56% Discount</h5>
-                                            <h3 class="text-hide"><?=$brand['name']?></h3>
+                                            <h3 class="text-hide"><?= $brand['name'] ?></h3>
                                             <button onclick="location.href = 'shop-left-sidebar.html';" type="button"
                                                 class="btn btn-light-white">Shop now <i
                                                     class="fas fa-chevron-right ms-2"></i></button>
@@ -1562,4 +1562,4 @@
         </div>
     </div>
 </section>
-<?php include '../views/client/layout/footer.php' ?>ww
+<?php include '../views/client/layout/footer.php' ?>

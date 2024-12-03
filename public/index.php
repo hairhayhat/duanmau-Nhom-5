@@ -8,6 +8,7 @@ require_once '../controllers/admin/CouponAdminControllers.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/HomeController.php';
 require_once '../controllers/client/CartController.php';
+require_once '../controllers/client/favoritesController.php';
 
 
 
@@ -21,6 +22,7 @@ $coupon = new CouponAdminControllers();
 $auth = new AuthController();
 $home = new HomeController();
 $cart = new CartController();
+$favorite = new FavoritesController();
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
@@ -36,6 +38,11 @@ switch ($action) {
         break;
     case 'detail-product':
         $home->detailProduct();
+        break;
+
+    // thêm sản phẩm yêu thích
+    case 'add-favorite-product':
+        $favorite->addFavoriteProduct();
         break;
 
     //Sản phẩm của admin
@@ -108,5 +115,17 @@ switch ($action) {
         break;
     case 'logout':
         $auth->logout();
+        break;
+    case 'update-profile':
+        include '../views/client/profile/updateProfile.php';
+        break;
+    case 'update-contact-user':
+        $auth->saveUpdateContact();
+        break;
+    case 'manage-avatar':
+        $auth->saveUpdataAvatar();
+        break;
+    case 'manage-address':
+        $auth->saveUpdateAddress();
         break;
 }

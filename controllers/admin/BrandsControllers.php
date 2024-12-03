@@ -81,7 +81,7 @@ class BrandsControllers extends BrandsModels
                 move_uploaded_file($file['tmp_name'], './images/brand/' . $logo);
 
                 // Xóa ảnh cũ nếu có
-                if (!empty($_POST['old_logo']) && file_exists('./logos/category/' . $_POST['old_logo'])) {
+                if (!empty($_POST['old_logo']) && file_exists('./images/category/' . $_POST['old_logo'])) {
                     unlink('./images/brand/' . $_POST['old_logo']);
                 }
             } else {
