@@ -19,7 +19,7 @@
                 <span>Cart</span>
             </a>
         </li>
-        <li>
+        <li>`
             <a href="wishlist.html">
                 <i data-feather="heart"></i>
                 <span>Wishlist</span>
@@ -526,8 +526,10 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="wishlist.html" class="wishlist">
-                                                <i data-feather="heart"></i>
+                                            <a
+                                                href="index.php?act=add-favorite-product&product_id=<?= $product['product_id'] ?>">
+                                                <i data-feather="heart"
+                                                    style="color: <?= ($product['favorite_user_id'] == $user['user_id']) ? 'red' : 'black'; ?>"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -539,7 +541,7 @@
                                     <span class="font-light grid-content"><?= $product['brand_name'] ?></span>
                                 </div>
                                 <div class="main-price">
-                                    <a href="?act=detail-product" class="font-default">
+                                    <a href="?act=detail-product&product_id=<?= $product['product_id'] ?>" class="font-default">
                                         <h5>Slim Fit Plastic Coat</h5>
                                     </a>
                                     <div class="listing-content">
@@ -551,7 +553,7 @@
                                             accusantium architecto placeat quam officia, tempore repellendus.</p>
                                     </div>
                                     <h3 class="theme-color">$78.00</h3>
-                                    <button onclick="location.href = '?act=detail-product';" class="btn listing-content">Add
+                                    <button onclick="location.href = '?';" class="btn listing-content">Add
                                         To Cart</button>
                                 </div>
                             </div>
@@ -1483,7 +1485,7 @@
                                     <div class="insta-hover insta-spacing text-center">
                                         <div>
                                             <h5>New Offer -56% Discount</h5>
-                                            <h3 class="text-hide"><?=$brand['name']?></h3>
+                                            <h3 class="text-hide"><?= $brand['name'] ?></h3>
                                             <button onclick="location.href = 'shop-left-sidebar.html';" type="button"
                                                 class="btn btn-light-white">Shop now <i
                                                     class="fas fa-chevron-right ms-2"></i></button>
@@ -1562,4 +1564,4 @@
         </div>
     </div>
 </section>
-<?php include '../views/client/layout/footer.php' ?>ww
+<?php include '../views/client/layout/footer.php' ?>

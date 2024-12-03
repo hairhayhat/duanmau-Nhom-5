@@ -146,7 +146,7 @@
                                         </li>
                                     </ul>
                                 </div>
-
+                                <form  action="?act=addToCart-byNow&product_id=<?= $detailProduct[0]['product_id'] ?>" method="POST">
                                 <div class="details-image-concept">
                                     <h2><?= $detailProduct[0]['product_name'] ?></h2>
                                 </div>
@@ -160,13 +160,14 @@
                                     <del><?= $detailProduct[0]['product_price'] ?>.000 Vnd</del><span>55% off</span>
                                 </h3>
 
-                                <form  action="?act=add_to_cart" method="POST">
+                               
                                     <div class="color-image">
                                         <div class="image-select">
                                             <h5 class="product-title product-title-2 d-block">Color :</h5>
                                             <ul class="image-section" style="list-style: none; padding: 0;">
                                                 <?php foreach ($detailVariant as $variant): ?>
                                                     <li style="display: inline-block; margin-right: 10px;">
+                                                        <input type="hidden" name="variant_id" id="variant_id" value="<?= $variant['variant_id']; ?>">
                                                         <span
                                                             style="display: inline-block; width: 45px; height: 45px; background-color: <?= $variant['variant_color_code']; ?>; border-radius: 10%; border: 1px solid #000;">
                                                         </span>

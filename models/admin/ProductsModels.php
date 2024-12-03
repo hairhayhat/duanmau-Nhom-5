@@ -24,12 +24,15 @@ class ProductsAdminModle extends Connect
             brands.brand_id AS brand_id,
             brands.name AS brand_name,
             product_variants.product_id AS product_variant_id,
-            COALESCE(variant_colors.color_name, '') AS variant_color_name
+            COALESCE(variant_colors.color_name, '') AS variant_color_name,
+            favorites.user_id AS favorite_user_id 
         FROM products
         LEFT JOIN category ON products.category_id = category.category_id
         LEFT JOIN brands ON products.brand_id = brands.brand_id
         LEFT JOIN product_variants ON products.product_id = product_variants.product_id
-        LEFT JOiN variant_colors ON product_variants.variant_color_id = variant_colors.variant_color_id";
+        LEFT JOIN variant_colors ON product_variants.variant_color_id = variant_colors.variant_color_id
+        LEFT JOIN favorites ON products.product_id = favorites.product_id";
+
 
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
@@ -48,6 +51,7 @@ class ProductsAdminModle extends Connect
                     'category_id' => $product['category_id'],
                     'category_name' => $product['category_name'],
                     'brand_name' => $product['brand_name'],
+                    'favorite_user_id' => $product['favorite_user_id'],
                     'variants' => [] // Mảng chứa các biến thể
                 ];
             }
@@ -72,10 +76,11 @@ class ProductsAdminModle extends Connect
 
     public function getAllProductByCate($category_id)
     {
-        $sql = 'SELECT p.product_id, p.name, p.description, p.price, p.image, c.name AS category_name, b.name AS brand_name
+        $sql = 'SELECT p.product_id, p.name, p.description, p.price, p.image, c.name AS category_name, b.name AS brand_name, f.user_id AS favorite_user_id
             FROM products p
             JOIN category c ON p.category_id = c.category_id
             JOIN brands b ON p.brand_id = b.brand_id
+            LEFT JOIN favorites f ON p.product_id = f.product_id 
             WHERE c.category_id = :category_id';
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindParam(':category_id', $category_id, PDO::PARAM_INT);

@@ -35,7 +35,7 @@
                         <button class="btn p-0"><i data-feather="arrow-left"></i> Close</button>
                     </div>
                     <div class="accordion category-name" id="accordionExample">
-                        
+
                         <div class="accordion-item category-rating">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -266,8 +266,10 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="wishlist.html" class="wishlist">
-                                                    <i data-feather="heart"></i>
+                                                <a href="index.php?act=add-favorite-product&product_id=<?= $product['product_id'] ?>"
+                                                    class="wishlist">
+                                                    <i data-feather="heart"
+                                                        style="color: <?= ($product['favorite_user_id'] == $user['user_id']) ? 'red' : 'black'; ?>"></i>
                                                 </a>
                                             </li>
                                         </ul>
