@@ -244,7 +244,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                             <div class="cart-btn">
                                                 <h6 class="cart-total"><span class="font-light">Total:</span> $
                                                     542.00</h6>
-                                                <button onclick="location.href = 'cart.html';" type="button"
+                                                <button onclick="location.href = '?act=cart';" type="button"
                                                     class="btn btn-solid-default btn-block">
                                                     Proceed to payment
                                                 </button>
