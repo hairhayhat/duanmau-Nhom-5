@@ -23,11 +23,9 @@ $coupon = new CouponAdminControllers();
 $auth = new AuthController();
 $home = new HomeController();
 $cart = new CartController();
-<<<<<<< HEAD
-
-=======
 $favorite = new FavoritesController();
->>>>>>> d2386b70e125ec50377039c94b6b4740677d5870
+$favorite = new FavoritesController();
+
 switch ($action) {
     case 'admin':
         include '../views/admin/index.php';
@@ -109,7 +107,6 @@ switch ($action) {
     case 'cart':
         $cart->index();
         break;
-<<<<<<< HEAD
     case 'addToCart-byNow':
         $cart->addToCartOrBuyNow();
         break;
@@ -119,11 +116,6 @@ switch ($action) {
     case 'delete-cart':
         $cart->delete();
         break;
-=======
-    case 'add_to_cart':
-        $cart->addtoCart($_SESSION['user']['user_id'], $_POST['product_id'], $_POST['variant_id'], $_POST['quantity']);
-        break;
->>>>>>> d2386b70e125ec50377039c94b6b4740677d5870
 
     //đăng nhập đăng xuất
     case 'login':
