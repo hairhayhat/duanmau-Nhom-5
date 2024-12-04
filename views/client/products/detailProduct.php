@@ -146,27 +146,31 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <form action="?act=addToCart-byNow&product_id=<?= $detailProduct[0]['product_id'] ?>"
+                                    method="POST">
+                                    <div class="details-image-concept">
+                                        <h2><?= $detailProduct[0]['product_name'] ?></h2>
+                                    </div>
 
-                                <div class="details-image-concept">
-                                    <h2><?= $detailProduct[0]['product_name'] ?></h2>
-                                </div>
+                                    <div class="label-section">
+                                        <span
+                                            class="badge badge-grey-color"><?= $detailProduct[0]['brand_name'] ?></span>
+                                        <span class="label-text"><?= $detailProduct[0]['category_name'] ?></span>
+                                    </div>
 
-                                <div class="label-section">
-                                    <span class="badge badge-grey-color"><?= $detailProduct[0]['brand_name'] ?></span>
-                                    <span class="label-text"><?= $detailProduct[0]['category_name'] ?></span>
-                                </div>
+                                    <h3 class="price-detail"><?= $detailProduct[0]['product_sale_price'] ?>.000 Vnd
+                                        <del><?= $detailProduct[0]['product_price'] ?>.000 Vnd</del><span>55% off</span>
+                                    </h3>
 
-                                <h3 class="price-detail"><?= $detailProduct[0]['product_sale_price'] ?>.000 Vnd
-                                    <del><?= $detailProduct[0]['product_price'] ?>.000 Vnd</del><span>55% off</span>
-                                </h3>
 
-                                <form action="path/to/your/cart/action" method="POST">
                                     <div class="color-image">
                                         <div class="image-select">
                                             <h5 class="product-title product-title-2 d-block">Color :</h5>
                                             <ul class="image-section" style="list-style: none; padding: 0;">
                                                 <?php foreach ($detailVariant as $variant): ?>
                                                     <li style="display: inline-block; margin-right: 10px;">
+                                                        <input type="hidden" name="variant_id" id="variant_id"
+                                                            value="<?= $variant['variant_id']; ?>">
                                                         <span
                                                             style="display: inline-block; width: 45px; height: 45px; background-color: <?= $variant['variant_color_code']; ?>; border-radius: 10%; border: 1px solid #000;">
                                                         </span>
@@ -204,12 +208,14 @@
                                     <input type="hidden" name="product_id"
                                         value="<?= $detailProduct[0]['product_id']; ?>">
 
+
                                     <div class="product-buttons">
                                         <a href="wishlist.html" class="btn btn-solid">
                                             <i class="fa fa-bookmark fz-16 me-2"></i>
                                             <span>Wishlist</span>
                                         </a>
-                                        <button type="submit" class="btn btn-solid hover-solid btn-animation">
+                                        <button type="submit" name="add_to_cart"
+                                            class="btn btn-solid hover-solid btn-animation">
                                             <i class="fa fa-shopping-cart"></i>
                                             <span>Add To Cart</span>
                                         </button>
@@ -453,7 +459,7 @@
             <div class="col-12">
                 <h2 class="mb-lg-4 mb-3">Customers Also Bought These</h2>
                 <div class="product-wrapper product-style-2 slide-4 p-0 light-arrow bottom-space">
-                <?php foreach ($productByCate as $product): ?>
+                    <?php foreach ($productByCate as $product): ?>
                         <div>
                             <div class="product-box">
                                 <div class="img-wrapper">
@@ -472,27 +478,26 @@
                                     <div class="cart-wrap">
                                         <ul>
                                             <li>
-                                                <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                    data-bs-target="#addtocart">
-                                                    <i data-feather="shopping-bag"></i>
-                                                </a>
-                                            </li>
-                                            <li>
                                                 <a
                                                     href="index.php?act=detail-product&product_id=<?= $product['product_id'] ?>">
                                                     <i data-feather="eye"></i>
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="compare.html">
-                                                    <i data-feather="refresh-cw"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="wishlist.html" class="wishlist">
-                                                    <i data-feather="heart"></i>
-                                                </a>
-                                            </li>
+                                            <?php if (isset($_SESSION['user'])): ?>
+                                                <li>
+                                                    <a
+                                                        href="index.php?act=add-favorite-product&product_id=<?= $product['product_id'] ?>">
+                                                        <i data-feather="heart"
+                                                            style="color: <?= ($product['favorite_user_id'] == $user['user_id']) ? 'red' : 'black'; ?>"></i>
+                                                    </a>
+                                                </li>
+                                            <?php else: ?>
+                                                <li>
+                                                    <a href="index.php?act=add-favorite-product" class="wishlist">
+                                                        <i data-feather="heart"></i>
+                                                    </a>
+                                                </li>
+                                            <?php endif ?>
                                         </ul>
                                     </div>
                                 </div>
@@ -551,5 +556,18 @@
             </div>
         </div>
     </div>
+</section>
+<section>
+    <div>
+<h1><?= htmlspecialchars($product['name']) ?></h1>
+<p><?= htmlspecialchars($product['description']) ?></p>
+
+<!-- Form thêm bình luận -->
+<?php require '../views/admin/comments/comment_form.php'; ?>
+
+<!-- Danh sách bình luận -->
+<?php $CommentController->showComments($product['id']); ?>
+
+</div>
 </section>
 <?php include '../views/client/layout/footer.php' ?>
