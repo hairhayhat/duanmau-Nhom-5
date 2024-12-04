@@ -557,6 +557,7 @@
         </div>
     </div>
 </section>
+<<<<<<< HEAD
 <section>
     <div>
 <h1><?= htmlspecialchars($product['name']) ?></h1>
@@ -571,3 +572,6 @@
 </div>
 </section>
 <?php include '../views/client/layout/footer.php' ?>
+=======
+<?php include '../views/client/layout/footer.php' ?>
+>>>>>>> 434ebb715ada1e280fa9bc5639787cf0be57fed7

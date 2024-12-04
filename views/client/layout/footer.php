@@ -451,7 +451,7 @@
 <!-- Newsletter modal end -->
 
 <!-- Coockie Section Start -->
-<div class="cookie-bar-section">
+<!-- <div class="cookie-bar-section">
     <img src="client/assets/images/cookie.png" alt="">
     <div class="content">
         <h3>Cookies Consent</h3>
@@ -461,7 +461,7 @@
             <a href="javascript:void(0)" class="btn default-light1">Learn more</a>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Coockie Section End -->
 
 <!-- theme Setting Start -->
