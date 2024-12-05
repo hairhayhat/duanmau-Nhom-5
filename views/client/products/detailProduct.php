@@ -772,6 +772,22 @@
         </div>
     </div>
 </section>
+<<<<<<< HEAD
+<section>
+    <div>
+<h1><?= htmlspecialchars($product['name']) ?></h1>
+<p><?= htmlspecialchars($product['description']) ?></p>
+
+<!-- Form thêm bình luận -->
+<?php require '../views/admin/comments/comment_form.php'; ?>
+
+<!-- Danh sách bình luận -->
+<?php $CommentController->showComments($product['id']); ?>
+
+</div>
+</section>
+<?php include '../views/client/layout/footer.php' ?>
+=======
 <?php include '../views/client/layout/footer.php' ?>
 
 <script>
