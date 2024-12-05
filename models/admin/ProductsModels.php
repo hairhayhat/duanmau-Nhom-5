@@ -163,7 +163,7 @@ class ProductsAdminModle extends Connect
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$product_id]);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     public function getProductVariantByid($product_id)
     {

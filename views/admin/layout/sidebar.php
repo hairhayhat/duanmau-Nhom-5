@@ -162,7 +162,7 @@
                         </li>
 
                         <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title link-nav" href="product-review.html">
+                            <a class="sidebar-link sidebar-title link-nav" href="?act=listComments">
                                 <i data-feather="star"></i>
                                 <span>Product Review</span>
                             </a>

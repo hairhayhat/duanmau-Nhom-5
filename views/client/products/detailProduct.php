@@ -51,7 +51,7 @@
                                                 <div class="form-check ps-0 custome-form-check">
                                                     <a href="index.php?act=detail-brand&brand_id=<?= $brand['brand_id'] ?>"
                                                         class="btn btn-color btn-sm fw-bold"
-                                                        style="color: <?= ($brand['brand_id'] == ($detailProduct[0]['brand_id'] ?? null)) ? 'rgb(226, 36, 84)' : 'inherit' ?>;">
+                                                        style="color: <?= ($brand['brand_id'] == ($detailProduct['brand_id'] ?? null)) ? 'rgb(226, 36, 84)' : 'inherit' ?>;">
                                                         <?= $brand['name'] ?>
                                                     </a>
                                                 </div>
@@ -78,7 +78,7 @@
                                                 <div class="form-check ps-0 custome-form-check">
                                                     <a href="index.php?act=detail-category&category_id=<?= $category['category_id'] ?>"
                                                         class="btn btn-color btn-sm fw-bold"
-                                                        style="color: <?= ($category['category_id'] == ($detailProduct[0]['category_id'] ?? null)) ? 'rgb(226, 36, 84)' : 'inherit' ?>;">
+                                                        style="color: <?= ($category['category_id'] == ($detailProduct['category_id'] ?? null)) ? 'rgb(226, 36, 84)' : 'inherit' ?>;">
                                                         <?= $category['name'] ?>
                                                     </a>
                                                 </div>
@@ -106,7 +106,7 @@
                                 <div class="details-image ratio_asos">
                                     <div>
                                         <div class="product-image-tag">
-                                            <img src="./images/product/<?= $detailProduct[0]['product_image'] ?>"
+                                            <img src="./images/product/<?= $detailProduct['product_image'] ?>"
                                                 id="zoom_01" data-zoom-image="client/assets/images/fashion/1.jpg"
                                                 class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="">
                                             <div class="label-tag">
@@ -146,20 +146,19 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <form action="?act=addToCart-byNow&product_id=<?= $detailProduct[0]['product_id'] ?>"
+                                <form action="?act=addToCart-byNow&product_id=<?= $detailProduct['product_id'] ?>"
                                     method="POST">
                                     <div class="details-image-concept">
-                                        <h2><?= $detailProduct[0]['product_name'] ?></h2>
+                                        <h2><?= $detailProduct['product_name'] ?></h2>
                                     </div>
 
                                     <div class="label-section">
-                                        <span
-                                            class="badge badge-grey-color"><?= $detailProduct[0]['brand_name'] ?></span>
-                                        <span class="label-text"><?= $detailProduct[0]['category_name'] ?></span>
+                                        <span class="badge badge-grey-color"><?= $detailProduct['brand_name'] ?></span>
+                                        <span class="label-text"><?= $detailProduct['category_name'] ?></span>
                                     </div>
 
-                                    <h3 class="price-detail"><?= $detailProduct[0]['product_sale_price'] ?>.000 Vnd
-                                        <del><?= $detailProduct[0]['product_price'] ?>.000 Vnd</del><span>55% off</span>
+                                    <h3 class="price-detail"><?= $detailProduct['product_sale_price'] ?>.000 Vnd
+                                        <del><?= $detailProduct['product_price'] ?>.000 Vnd</del><span>55% off</span>
                                     </h3>
 
 
@@ -205,8 +204,7 @@
                                         </div>
                                     </div>
 
-                                    <input type="hidden" name="product_id"
-                                        value="<?= $detailProduct[0]['product_id']; ?>">
+                                    <input type="hidden" name="product_id" value="<?= $detailProduct['product_id']; ?>">
 
 
                                     <div class="product-buttons">
@@ -278,6 +276,7 @@
                 </div>
             </div>
 
+
             <div class="col-12">
                 <div class="cloth-review">
                     <nav>
@@ -286,10 +285,15 @@
                                 data-bs-target="#desc" type="button">Description</button>
                             <button class="nav-link " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#speci"
                                 type="button">Specifications</button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#review"
+                                type="button">Review</button>
                         </div>
                     </nav>
 
                     <div class="tab-content" id="nav-tabContent">
+
+
+                        <!-- Description -->
                         <div class="tab-pane fade show active" id="desc">
                             <div class="shipping-chart">
                                 <div class="part">
@@ -386,6 +390,7 @@
                             </div>
                         </div>
 
+                        <!-- Specifications -->
                         <div class="tab-pane fade" id="speci">
                             <div class="pro mb-4">
                                 <p class="font-light">The Model is wearing a white blouse from our stylist's
@@ -443,7 +448,217 @@
                             </div>
                         </div>
 
+                        <!-- review -->
+                        <div class="tab-pane fade" id="review">
+                            <div class="row g-4">
+                                <div class="col-lg-4">
+                                    <div class="customer-rating">
+                                        <h2>Customer reviews</h2>
+                                        <ul class="rating my-2 d-inline-block">
+                                            <li>
+                                                <i class="fas fa-star theme-color"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star theme-color"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star theme-color"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                        </ul>
 
+                                        <div class="global-rating">
+                                            <h5 class="font-light">82 Ratings</h5>
+                                        </div>
+
+                                        <ul class="rating-progess">
+                                            <li>
+                                                <h5 class="me-3">5 Star</h5>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 78%"
+                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                                    </div>
+                                                </div>
+                                                <h5 class="ms-3">78%</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="me-3">4 Star</h5>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 62%"
+                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                                    </div>
+                                                </div>
+                                                <h5 class="ms-3">62%</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="me-3">3 Star</h5>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 44%"
+                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                                    </div>
+                                                </div>
+                                                <h5 class="ms-3">44%</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="me-3">2 Star</h5>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 30%"
+                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                                    </div>
+                                                </div>
+                                                <h5 class="ms-3">30%</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="me-3">1 Star</h5>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 18%"
+                                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                                    </div>
+                                                </div>
+                                                <h5 class="ms-3">18%</h5>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8">
+                                    <div class="review-box">
+                                        <form class="row g-4"
+                                            action="?act=addComments&product_id=<?=$detailProduct['product_id']?>"
+                                            method="post">
+
+                                            <div class="col-6 col-md-4 d-flex align-items-center">
+                                                <img src="./images/avatar/<?= $user['avatar'] ?>" alt="Avatar"
+                                                    class="rounded-circle me-3"
+                                                    style="width: 50px; height: 50px; object-fit: cover;">
+                                                <div>
+                                                    <label class="mb-1 d-block fw-bold"
+                                                        for="id"><?= $user['name'] ?></label>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <p class="d-inline-block me-2">Rating (10 points):</p>
+                                                <div id="rating">
+                                                    <div class="d-flex">
+                                                        <label class="form-check-label me-2" for="rating-1">
+                                                            <input type="radio" class="form-check-input" name="rating"
+                                                                id="rating-1" value="1"> 1
+                                                        </label>
+                                                        <label class="form-check-label me-2" for="rating-2">
+                                                            <input type="radio" class="form-check-input" name="rating"
+                                                                id="rating-2" value="2"> 2
+                                                        </label>
+                                                        <label class="form-check-label me-2" for="rating-3">
+                                                            <input type="radio" class="form-check-input" name="rating"
+                                                                id="rating-3" value="3"> 3
+                                                        </label>
+                                                        <label class="form-check-label me-2" for="rating-4">
+                                                            <input type="radio" class="form-check-input" name="rating"
+                                                                id="rating-4" value="4"> 4
+                                                        </label>
+                                                        <label class="form-check-label me-2" for="rating-5">
+                                                            <input type="radio" class="form-check-input" name="rating"
+                                                                id="rating-5" value="5"> 5
+                                                        </label>
+                                                        <label class="form-check-label me-2" for="rating-6">
+                                                            <input type="radio" class="form-check-input" name="rating"
+                                                                id="rating-6" value="6"> 6
+                                                        </label>
+                                                        <label class="form-check-label me-2" for="rating-7">
+                                                            <input type="radio" class="form-check-input" name="rating"
+                                                                id="rating-7" value="7"> 7
+                                                        </label>
+                                                        <label class="form-check-label me-2" for="rating-8">
+                                                            <input type="radio" class="form-check-input" name="rating"
+                                                                id="rating-8" value="8"> 8
+                                                        </label>
+                                                        <label class="form-check-label me-2" for="rating-9">
+                                                            <input type="radio" class="form-check-input" name="rating"
+                                                                id="rating-9" value="9"> 9
+                                                        </label>
+                                                        <label class="form-check-label me-2" for="rating-10">
+                                                            <input type="radio" class="form-check-input" name="rating"
+                                                                id="rating-10" value="10"> 10
+                                                        </label>
+                                                    </div>
+                                                    <p id="rating-message" class="mt-3 text-dark date-custo font-light">
+                                                    </p>
+                                                    <?php if (isset($_SESSION['errors']['rating'])): ?>
+                                                        <p class="text-danger"><?= $_SESSION['errors']['rating'] ?></p>
+                                                    <?php endif ?>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label class="mb-1" for="comments">Comments</label>
+                                                <textarea class="form-control" placeholder="Leave a comment here"
+                                                    id="comments" style="height: 100px" name="content"></textarea>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit"
+                                                    class="btn default-light-theme default-theme default-theme-2"
+                                                    name="addComment">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                    <div class="customer-review-box">
+                                        <h4>Customer Reviews</h4>
+                                        <div class="customer-section">
+                                            <div class="customer-profile">
+                                                <img src="assets/images/inner-page/review-image/1.jpg"
+                                                    class="img-fluid blur-up lazyload" alt="">
+                                            </div>
+
+                                            <div class="customer-details">
+                                                <h5>Mike K</h5>
+                                                <ul class="rating my-2 d-inline-block">
+                                                    <li>
+                                                        <i class="fas fa-star theme-color"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-star theme-color"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-star theme-color"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <p class="font-light">I purchased my Tab S2 at Best Buy but I
+                                                    wanted
+                                                    to
+                                                    share my thoughts on Amazon. I'm not going to go over specs
+                                                    and
+                                                    such
+                                                    since you can read those in a hundred other places. Though I
+                                                    will
+                                                    say that the "new" version is preloaded with Marshmallow and
+                                                    now
+                                                    uses a Qualcomm octacore processor in place of the Exynos
+                                                    that
+                                                    shipped with the first gen.</p>
+
+                                                <p class="date-custo font-light">- Sep 08, 2021</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -558,3 +773,31 @@
     </div>
 </section>
 <?php include '../views/client/layout/footer.php' ?>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const ratingInputs = document.querySelectorAll('input[name="rating"]');
+        const ratingMessage = document.getElementById('rating-message');
+
+        const messages = {
+            1: "Chúng tôi thật sự xin lỗi! Chắc chắn chúng tôi sẽ cải thiện ngay lập tức để xứng đáng với sự tin tưởng của bạn.",
+            2: "Chúng tôi biết mình còn nhiều thiếu sót, nhưng sẽ cố gắng hết sức để mang lại trải nghiệm tuyệt vời hơn cho bạn!",
+            3: "Cảm ơn bạn đã cho chúng tôi cơ hội! Chúng tôi sẽ nỗ lực hơn nữa để khiến bạn hài lòng hơn!",
+            4: "Bốn điểm là một bước tiến lớn! Chúng tôi sẽ không dừng lại ở đây và sẽ cố gắng cải thiện nhiều hơn nữa!",
+            5: "Cảm ơn bạn rất nhiều vì đánh giá 5 điểm! Nhưng chúng tôi vẫn luôn muốn làm tốt hơn để bạn thực sự hài lòng!",
+            6: "Một đánh giá tuyệt vời! Cảm ơn bạn! Chúng tôi sẽ nỗ lực nhiều hơn nữa để bạn có thể cho điểm tuyệt đối!",
+            7: "7 điểm là một tín hiệu rất tích cực, nhưng chúng tôi tin rằng chúng tôi có thể làm tốt hơn và đạt điểm 10 tuyệt đối!",
+            8: "Cảm ơn bạn đã cho điểm 8! Chúng tôi rất trân trọng sự đánh giá của bạn và sẽ luôn cố gắng để đạt được 10 điểm hoàn hảo!",
+            9: "Gần như hoàn hảo rồi! Bạn đã cho chúng tôi điểm 9, và chúng tôi sẽ không ngừng cải thiện để đạt điểm tuyệt đối!",
+            10: "Cảm ơn bạn rất nhiều! Chúng tôi thực sự rất tự hào khi nhận được điểm tuyệt đối này và sẽ tiếp tục giữ vững chất lượng tuyệt vời này!"
+        };
+
+
+        ratingInputs.forEach(input => {
+            input.addEventListener('change', function () {
+                const ratingValue = this.value;
+                ratingMessage.textContent = messages[ratingValue];
+            });
+        });
+    });
+</script>

@@ -5,10 +5,12 @@ require_once '../controllers/admin/CategoriesControllers.php';
 require_once '../controllers/admin/ProductsControllers.php';
 require_once '../controllers/admin/BrandsControllers.php';
 require_once '../controllers/admin/CouponAdminControllers.php';
+require_once '../controllers/admin/CommentsController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/HomeController.php';
 require_once '../controllers/client/CartController.php';
 require_once '../controllers/client/favoritesController.php';
+require_once '../controllers/client/CommentsController.php';
 
 
 
@@ -25,6 +27,8 @@ $home = new HomeController();
 $cart = new CartController();
 $favorite = new FavoritesController();
 $favorite = new FavoritesController();
+$comment = new CommentsController();
+$commentAdmin = new CommentsAdminController();
 
 switch ($action) {
     case 'admin':
@@ -102,6 +106,13 @@ switch ($action) {
     case 'coupon-delete':
         $coupon->delete();
         break;
+    // quản lý comment của admin
+    case 'listComments':
+        $commentAdmin->listComments();
+        break;
+    case 'edit-status-comment':
+        $commentAdmin->editStatusComment();
+        break;
 
     //giỏ hàng
     case 'cart':
@@ -116,6 +127,12 @@ switch ($action) {
     case 'delete-cart':
         $cart->delete();
         break;
+
+    // bình luận
+    case 'addComments':
+        $comment->addComment();
+        break;
+
 
     //đăng nhập đăng xuất
     case 'login':

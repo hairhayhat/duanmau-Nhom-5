@@ -22,7 +22,7 @@
                             <li>
                                 <span>
                                     <b>Email:</b>
-                                    <span class="font-light"> duanmaunhom6@gmail.com</span>
+                                    <span class="font-light"> duanmaunhom5@gmail.com</span>
                                 </span>
 
                             </li>

@@ -56,7 +56,7 @@ class HomeController
         $detailProduct = $this->product->getProductById($id);
         $detailVariant = $this->product->getProductVariantByid($id);
         $detailGallery = $this->product->getProductGalleryByid($id);
-        $productByCate = $this->product->getAllProductByCate($detailProduct[0]['category_id']);
+        $productByCate = $this->product->getAllProductByCate($detailProduct['category_id']);
         include '../views/client/products/detailProduct.php';
     }
 }
