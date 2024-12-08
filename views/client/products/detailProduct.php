@@ -529,16 +529,21 @@
                                 <div class="col-lg-8">
                                     <div class="review-box">
                                         <form class="row g-4"
-                                            action="?act=addComments&product_id=<?=$detailProduct['product_id']?>"
+                                            action="?act=addComments&product_id=<?= $detailProduct['product_id'] ?>"
                                             method="post">
 
                                             <div class="col-6 col-md-4 d-flex align-items-center">
-                                                <img src="./images/avatar/<?= $user['avatar'] ?>" alt="Avatar"
-                                                    class="rounded-circle me-3"
-                                                    style="width: 50px; height: 50px; object-fit: cover;">
+                                                <?php if (isset($user)): ?>
+                                                    <img src="./images/avatar/<?= $user['avatar'] ?>" alt="Avatar"
+                                                        class="rounded-circle me-3"
+                                                        style="width: 50px; height: 50px; object-fit: cover;">
+                                                <?php else: ?>
+                                                    <div></div>
+                                                <?php endif ?>
                                                 <div>
                                                     <label class="mb-1 d-block fw-bold"
-                                                        for="id"><?= $user['name'] ?></label>
+                                                        for="id"><?php echo isset($user) ? $user['name'] : 'Guest'; ?>
+                                                    </label>
                                                 </div>
                                             </div>
 
@@ -606,6 +611,7 @@
                                                     class="btn default-light-theme default-theme default-theme-2"
                                                     name="addComment">Submit</button>
                                             </div>
+
                                         </form>
                                     </div>
                                 </div>
@@ -613,50 +619,48 @@
                                 <div class="col-12 mt-4">
                                     <div class="customer-review-box">
                                         <h4>Customer Reviews</h4>
-                                        <div class="customer-section">
-                                            <div class="customer-profile">
-                                                <img src="assets/images/inner-page/review-image/1.jpg"
-                                                    class="img-fluid blur-up lazyload" alt="">
+                                        <?php if ($productComments): ?>
+                                            <!-- hiển thị bình luận nếu có -->
+                                            <div class="customer-section row">
+                                                <?php foreach ($productComments as $comment): ?>
+                                                    <div>
+                                                        <div class="mr-3 d-flex align-items-center">
+                                                            <img src="./images/avatar/<?= $comment['comment_avatar_user'] ?>"
+                                                                class="img-fluid rounded-circle" alt="Avatar"
+                                                                style="width: 50px; height: 50px;">
+                                                            <h5 class="ml-2"><?= $comment['comment_name_user'] ?></h5>
+                                                        </div>
+                                                        <div class="mb-4 p-3 border rounded">
+                                                            <div class="d-flex">
+                                                                <div class="w-100">
+                                                                    <h6><strong>Rating:</strong> <?= $comment['rating'] ?></h6>
+                                                                    <div class="content-box">
+                                                                        <p class="font-light"><?= $comment['content'] ?></p>
+                                                                    </div>
+                                                                    <div class="text-right font-light">
+                                                                        <p class="date-custo">- <?= $comment['created_at'] ?>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <?php endforeach ?>
+                                            </div>
+                                        <?php else: ?>
+                                            <!-- Nếu chưa có bình luận -->
+                                            <div class="d-flex justify-content-center align-items-center text-dark"
+                                                style="height: 200px;">
+                                                <h3>Sản phẩm hiện chưa có bình luận nào</h3>
                                             </div>
 
-                                            <div class="customer-details">
-                                                <h5>Mike K</h5>
-                                                <ul class="rating my-2 d-inline-block">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
-                                                <p class="font-light">I purchased my Tab S2 at Best Buy but I
-                                                    wanted
-                                                    to
-                                                    share my thoughts on Amazon. I'm not going to go over specs
-                                                    and
-                                                    such
-                                                    since you can read those in a hundred other places. Though I
-                                                    will
-                                                    say that the "new" version is preloaded with Marshmallow and
-                                                    now
-                                                    uses a Qualcomm octacore processor in place of the Exynos
-                                                    that
-                                                    shipped with the first gen.</p>
+                                        <?php endif ?>
 
-                                                <p class="date-custo font-light">- Sep 08, 2021</p>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -772,22 +776,6 @@
         </div>
     </div>
 </section>
-<<<<<<< HEAD
-<section>
-    <div>
-<h1><?= htmlspecialchars($product['name']) ?></h1>
-<p><?= htmlspecialchars($product['description']) ?></p>
-
-<!-- Form thêm bình luận -->
-<?php require '../views/admin/comments/comment_form.php'; ?>
-
-<!-- Danh sách bình luận -->
-<?php $CommentController->showComments($product['id']); ?>
-
-</div>
-</section>
-<?php include '../views/client/layout/footer.php' ?>
-=======
 <?php include '../views/client/layout/footer.php' ?>
 
 <script>

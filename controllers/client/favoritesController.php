@@ -35,4 +35,11 @@ class FavoritesController extends FavoritesModels
             exit();
         }
     }
+
+    public function listLoveById()
+    {
+        $userId = $_SESSION['user']['user_id'];
+        $loves = $this->getAllByUserFavorites($userId);
+        include '../views/client/profile/listLove.php';
+    }
 }

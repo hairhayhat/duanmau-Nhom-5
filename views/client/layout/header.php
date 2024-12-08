@@ -187,48 +187,12 @@ if (session_status() == PHP_SESSION_NONE) {
                                             </div>
                                         </li>
                                         <li class="onhover-dropdown cart-dropdown">
-                                            <button type="button" class="btn btn-solid-default btn-spacing">
+                                            <a href="?act=cart" class="btn btn-solid-default btn-spacing">
                                                 <i data-feather="shopping-cart" class="pe-2"></i>
-                                                <span>$5686.25</span>
-                                            </button>
-                                            <div class="onhover-div">
-                                                <div class="cart-menu">
-
-                                                    <?php foreach ($carts as $cart): ?>
-                                                        <ul class="custom-scroll">
-                                                            <li>
-                                                                <div class="media">
-                                                                    <img src="assets/images/fashion/product/front/7.jpg"
-                                                                        class="img-fluid blur-up lazyload" alt="">
-                                                                    <div class="media-body">
-                                                                        <h6>Womens Stylish Jacket</h6>
-                                                                        <div class="qty-with-price">
-                                                                            <span>$24.00</span>
-                                                                            <span>
-                                                                                <input type="number" class="form-control"
-                                                                                    value="1">
-                                                                            </span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <button type="button" class="btn-close d-block d-md-none"
-                                                                        aria-label="Close">
-                                                                        <i class="fas fa-times"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    <?php endforeach; ?>
-                                                </div>
-                                                <div class="cart-btn">
-                                                    <h6 class="cart-total"><span class="font-light">Total:</span> $
-                                                        542.00</h6>
-                                                    <button onclick="location.href = 'cart.html';" type="button"
-                                                        class="btn btn-solid-default btn-block">
-                                                        Proceed to payment
-                                                    </button>
-                                                </div>
-                                            </div>
+                                                <span>Danh sách</span>
+                                            </a>
                                         </li>
+
                                     <?php else: ?>
                                         <li class="onhover-dropdown">
                                             <div class="cart-media">
@@ -240,7 +204,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                                         <a href="?act=login" class="d-block">Login</a>
                                                     </li>
                                                     <li>
-                                                        <a href="?act=logout" class="d-block">Create account</a>
+                                                        <a href="?act=register" class="d-block">Create account</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -293,12 +257,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                                     </ul>
                                                 </div>
                                                 <div class="cart-btn">
-                                                    <h6 class="cart-total"><span class="font-light">Total:</span> $
-                                                        542.00</h6>
-                                                    <button onclick="location.href = 'cart.html';" type="button"
-                                                        class="btn btn-solid-default btn-block">
-                                                        Proceed to payment
-                                                    </button>
+                                                    <h6 class="cart-total"><span class="font-light"></h6>
                                                 </div>
                                             </div>
                                         </li>

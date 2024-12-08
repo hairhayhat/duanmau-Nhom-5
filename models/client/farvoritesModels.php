@@ -31,12 +31,17 @@ class FavoritesModels extends Connect
         return $stmt->fetchColumn() > 0;
     }
 
-    public function getAllFavorites()
+    public function getAllByUserFavorites($user_id)
     {
-        $sql = "SELECT * FROM favorites";
+        $sql = "SELECT f.*, p.name AS product_name, p.image AS product_image 
+                FROM favorites f
+                INNER JOIN products p ON f.product_id = p.product_id
+                WHERE f.user_id = ?";
+
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchAll();
+        $stmt->execute([$user_id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
 
 }

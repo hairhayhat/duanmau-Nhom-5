@@ -2,6 +2,7 @@
 require_once '../models/admin/CategoriesModels.php';
 require_once '../models/admin/ProductsModels.php';
 require_once '../models/client/Cart.php';
+require_once '../models/client/commentModels.php';
 class HomeController
 {
     protected $category;
@@ -9,6 +10,8 @@ class HomeController
     protected $brand;
     protected $coupon;
     protected $cart;
+
+    protected $comment;
     public function __construct()
     {
         $this->category = new CategoryAdminModel();
@@ -16,6 +19,7 @@ class HomeController
         $this->brand = new BrandsModels();
         $this->coupon = new Coupon();
         $this->cart = new Cart();
+        $this->comment = new CommentModels();
     }
     public function index()
     {
@@ -29,13 +33,14 @@ class HomeController
     {
         $categories = $this->category->listCategoriesAdmin();
         $carts = $this->cart->getAllCart();
+        print_r($categories);
         include '../views/client/layout/header.php';
     }
 
     public function getDetailCategory()
     {
         $categories = $this->category->listCategoriesAdmin();
-        
+
         $brands = $this->brand->getAllBrands();
         $colors = $this->product->getAllColors();
         $coupons = $this->coupon->listCoupon();
@@ -57,6 +62,7 @@ class HomeController
         $detailVariant = $this->product->getProductVariantByid($id);
         $detailGallery = $this->product->getProductGalleryByid($id);
         $productByCate = $this->product->getAllProductByCate($detailProduct['category_id']);
+        $productComments = $this->comment->getListComments($id);
         include '../views/client/products/detailProduct.php';
     }
 }

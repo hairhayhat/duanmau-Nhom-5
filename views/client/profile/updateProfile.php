@@ -55,16 +55,6 @@
                                     <strong>Email:</strong><?= $user['email'] ?><br>
                                     <strong>Phone:</strong>
                                     <?= !empty($user['phone']) ? $user['phone'] : 'N/A' ?>
-                                    <br>
-                                    <?php
-                                    $dateTime = strtotime($user['update_at']);
-                                    $formattedDate = date('d-m-Y', $dateTime);
-                                    $formattedTime = date('H:i', $dateTime);
-                                    ?>
-                                    Update lần cuối vào lúc <?=$formattedTime?> ngày <?=$formattedDate?>
-
-
-
                                 </p>
                                 <a href="#" class="text-danger" data-bs-toggle="modal"
                                     data-bs-target="#manageContactModal">Manage Contact</a>

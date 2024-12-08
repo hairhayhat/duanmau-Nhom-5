@@ -6,11 +6,14 @@ require_once '../controllers/admin/ProductsControllers.php';
 require_once '../controllers/admin/BrandsControllers.php';
 require_once '../controllers/admin/CouponAdminControllers.php';
 require_once '../controllers/admin/CommentsController.php';
+require_once '../controllers/admin/UsersControllers.php';
+require_once '../controllers/admin/OrderControllerAdmin.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/HomeController.php';
 require_once '../controllers/client/CartController.php';
 require_once '../controllers/client/favoritesController.php';
 require_once '../controllers/client/CommentsController.php';
+require_once '../controllers/client/OrderController.php';
 
 
 
@@ -29,6 +32,9 @@ $favorite = new FavoritesController();
 $favorite = new FavoritesController();
 $comment = new CommentsController();
 $commentAdmin = new CommentsAdminController();
+$userAdmin = new UsersControllers();
+$order = new OrderController();
+$orderAdmin = new OrderControllerAdmin();
 
 switch ($action) {
     case 'admin':
@@ -52,6 +58,9 @@ switch ($action) {
     // thêm sản phẩm yêu thích
     case 'add-favorite-product':
         $favorite->addFavoriteProduct();
+        break;
+    case 'listLove':
+        $favorite->listLoveById();
         break;
 
     //Sản phẩm của admin
@@ -90,6 +99,14 @@ switch ($action) {
         $brandAdmin->saveEditBrand();
         break;
 
+    // hóa đơn của admin
+    case 'listOrderAdmin':
+        $orderAdmin->listOrder();
+        break;
+    case 'detailOrder':
+        $orderAdmin->getOrderDetails();
+        break;
+
     //coupon
     case 'coupon-list':
         $coupon->index();
@@ -114,6 +131,15 @@ switch ($action) {
         $commentAdmin->editStatusComment();
         break;
 
+    // quản lý khách hàng
+    case 'listUsers':
+        $userAdmin->listUsers();
+        break;
+    case 'update-role-user':
+        $userAdmin->updateRoleUser();
+        break;
+
+
     //giỏ hàng
     case 'cart':
         $cart->index();
@@ -128,9 +154,27 @@ switch ($action) {
         $cart->delete();
         break;
 
+    //hóa đơn
+    case 'checkout':
+        $order->checkOut();
+        break;
+    case 'edit_checkout':
+        $order->detailOrder();
+        break;
+    case 'saveOrder':
+        $order->saveEditOrder();
+        break;
+    case 'listOrder':
+        $order->listOrder();
+        break;
+
+
     // bình luận
     case 'addComments':
         $comment->addComment();
+        break;
+    case 'listCommentsClient':
+        $comment->listComments();
         break;
 
 

@@ -24,7 +24,7 @@ class Cart extends connect
             ';
         $stmt = $this->connect()->prepare(query: $sql);
         $stmt->execute(params: [$_SESSION['user']['user_id']]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function addToCart($user_id, $product_id, $variant_id, $quantity): bool
     {

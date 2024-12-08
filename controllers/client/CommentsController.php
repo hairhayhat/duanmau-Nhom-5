@@ -5,6 +5,12 @@ class CommentsController extends CommentModels
 {
     public function addComment()
     {
+        $productId = $_GET['product_id'];
+        if (!isset($_SESSION['user'])) {
+            $_SESSION['error'] = 'Bạn cần đăng nhập để thêm bình luận.';
+            header('Location: ?act=detail-product&product_id=' . $productId);
+            exit();
+        }
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['addComment'])) {
             $errors = [];
             if (empty($_POST['rating'])) {
@@ -16,7 +22,7 @@ class CommentsController extends CommentModels
             if (empty($errors)) {
                 $rating = $_POST['rating'];
                 $content = $_POST['content'];
-                $productId = $_GET['product_id'];
+
                 $userId = $_SESSION['user']['user_id'];
 
                 $result = $this->addComments($userId, $productId, $content, $rating);
@@ -35,4 +41,13 @@ class CommentsController extends CommentModels
         }
         include '../views/client/products/detailProduct.php';
     }
+
+    public function listComments()
+    {
+        $userId = $_SESSION['user']['user_id'];
+        $comments = $this->getAllListComments($userId);
+        include '../views/client/profile/listComment.php';
+
+    }
+
 }

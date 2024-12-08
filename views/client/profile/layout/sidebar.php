@@ -51,7 +51,7 @@
                             </li>
 
                             <li class="">
-                                <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                                <a class="sidebar-link sidebar-title" href="?act=listOrder">
                                     <i data-feather="archive"></i>
                                     <span>Hóa Đơn</span>
                                 </a>
@@ -64,13 +64,13 @@
                                 </a>
                             </li>
                             <li class="">
-                                <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                                <a class="sidebar-link sidebar-title" href="?act=listLove">
                                     <i data-feather="heart"></i>
                                     <span>Yêu thích</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                                <a class="sidebar-link sidebar-title" href="?act=listCommentsClient">
                                     <i data-feather="message-square"></i>
                                     <span>Bình luận gần đây</span>
                                 </a>

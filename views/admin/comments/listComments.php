@@ -2,7 +2,7 @@
 <?php include '../views/admin/layout/sidebar.php' ?>
 <div class="page-body">
     <div class="title-header">
-        <h5>Danh sách Thương Hiệu</h5>
+        <h5>Danh sách tất cả bình luận</h5>
     </div>
 
     <div class="container-fluid">

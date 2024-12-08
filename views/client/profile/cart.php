@@ -74,7 +74,7 @@
                                                             </td>
                                                             <td>
                                                                 <h6 class="text-success">
-                                                                    <?= $item_total ?>.000đ
+                                                                    <?= $item_total ?>,000đ
                                                                 </h6>
                                                             </td>
                                                         </tr>
@@ -95,7 +95,7 @@
                                             <!-- Total Price on the right -->
                                             <div class="col-md-6 text-end">
                                                 <h3>Tổng tiền: <span
-                                                        class="fw-bold"><?= number_format($total) ?>.000đ</span></h3>
+                                                        class="fw-bold"><?= number_format($total) ?>,000đ</span></h3>
                                             </div>
                                         </div>
 
@@ -116,7 +116,7 @@
                                     <!-- Checkout Button -->
                                     <div class="col-lg-6 col-sm-3">
                                         <div class="checkout-button col-md-12 text-end">
-                                            <a href="checkout.html" class="btn btn-solid-default fw-bold">
+                                            <a href="?act=checkout" class="btn btn-solid-default fw-bold">
                                                 Check Out <i class="fas fa-arrow-right ms-1"></i>
                                             </a>
                                         </div>

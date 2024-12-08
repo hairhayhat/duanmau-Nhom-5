@@ -41,21 +41,6 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-                                <i data-feather="users"></i>
-                                <span>Users</span>
-                            </a>
-                            <ul class="sidebar-submenu">
-                                <li>
-                                    <a href="all-users.html">All users</a>
-                                </li>
-                                <li>
-                                    <a href="add-new-user.html">Add new user</a>
-                                </li>
-                            </ul>
-                        </li>
-
                         <li class="sidebar-main-title sidebar-main-title-2">
                             <div>
                                 <h6 class="lan-1">Application</h6>
@@ -66,17 +51,11 @@
                         <li class="sidebar-list">
                             <a class="sidebar-link sidebar-title" href="javascript:void(0)">
                                 <i data-feather="archive"></i>
-                                <span>Orders</span>
+                                <span>Hóa Đơn</span>
                             </a>
                             <ul class="sidebar-submenu">
                                 <li>
-                                    <a href="order-list.html">Order List</a>
-                                </li>
-                                <li>
-                                    <a href="order-detail.html">Order Detail</a>
-                                </li>
-                                <li>
-                                    <a href="order-tracking.html">Order Tracking</a>
+                                    <a href="?act=listOrderAdmin">Danh sách hóa đơn</a>
                                 </li>
                             </ul>
                         </li>
@@ -84,15 +63,11 @@
                         <li class="sidebar-list">
                             <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                 <i data-feather="users"></i>
-                                <span>Venders</span>
+                                <span>Khách hàng</span>
                             </a>
                             <ul class="sidebar-submenu">
                                 <li>
-                                    <a href="vendor-list.html">Vendor List</a>
-                                </li>
-
-                                <li>
-                                    <a href="create-vendor.html">Create Vendor</a>
+                                    <a href="?act=listUsers">Danh sách khách hàng</a>
                                 </li>
                             </ul>
                         </li>
@@ -169,20 +144,6 @@
                         </li>
 
                         <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title link-nav" href="invoice.html">
-                                <i data-feather="archive"></i>
-                                <span>Invoice</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title link-nav" href="support-ticket.html">
-                                <i data-feather="phone"></i>
-                                <span>Support Ticket</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-list">
                             <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                 <i data-feather="settings"></i>
                                 <span>Settings</span>
@@ -192,41 +153,6 @@
                                     <a href="profile-setting.html">Profile Setting</a>
                                 </li>
                             </ul>
-                        </li>
-
-                        <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title link-nav" href="reports.html">
-                                <i data-feather="file-text"></i>
-                                <span>Reports</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title link-nav" href="list-page.html">
-                                <i data-feather="list"></i>
-                                <span>List Page</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title link-nav" href="login.html">
-                                <i data-feather="log-in"></i>
-                                <span>Log In</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title link-nav" href="forgot-password.html">
-                                <i data-feather="key"></i>
-                                <span>Forgot Password</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title link-nav" href="sign-up.html">
-                                <i data-feather="plus-circle"></i>
-                                <span>Register</span>
-                            </a>
                         </li>
                     </ul>
                 </div>
